@@ -154,7 +154,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EnrichmentApi* | [**enrich_search**](docs/EnrichmentApi.md#enrich_search) | **GET** /enrich/{type} | Get enriched search results
 *FastGPTApi* | [**fast_gpt**](docs/FastGPTApi.md#fast_gpt) | **POST** /fastgpt | Answer a query.
-*SearchApi* | [**super_search**](docs/SearchApi.md#super_search) | **GET** /search | Perform a search of the web.
+*SearchApi* | [**search**](docs/SearchApi.md#search) | **GET** /search | Perform a search of the web.
 *SummarizerApi* | [**summarize_text**](docs/SummarizerApi.md#summarize_text) | **POST** /summarize | Upload text to summarize.
 *SummarizerApi* | [**summarize_url**](docs/SummarizerApi.md#summarize_url) | **GET** /summarize | Get a summary for a URL
 
@@ -183,12 +183,12 @@ Class | Method | HTTP request | Description
  - [ResultVideoProps](docs/ResultVideoProps.md)
  - [ResultWebArchive](docs/ResultWebArchive.md)
  - [ResultWebArchiveProps](docs/ResultWebArchiveProps.md)
+ - [Search200Response](docs/Search200Response.md)
+ - [Search200ResponseData](docs/Search200ResponseData.md)
  - [SearchObject](docs/SearchObject.md)
+ - [SearchRequest](docs/SearchRequest.md)
  - [Summary](docs/Summary.md)
  - [SummaryData](docs/SummaryData.md)
- - [SuperSearch200Response](docs/SuperSearch200Response.md)
- - [SuperSearch200ResponseData](docs/SuperSearch200ResponseData.md)
- - [SuperSearchRequest](docs/SuperSearchRequest.md)
  - [UploadText](docs/UploadText.md)
 
 

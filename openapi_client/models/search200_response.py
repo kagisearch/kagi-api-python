@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
-
 """
     Kagi API
 
@@ -15,52 +13,86 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+from __future__ import annotations
+import pprint
+import re  # noqa: F401
+import json
 
-# import apis into sdk package
-from openapi_client.api.enrichment_api import EnrichmentApi
-from openapi_client.api.fast_gpt_api import FastGPTApi
-from openapi_client.api.search_api import SearchApi
-from openapi_client.api.summarizer_api import SummarizerApi
-
-# import ApiClient
-from openapi_client.api_response import ApiResponse
-from openapi_client.api_client import ApiClient
-from openapi_client.configuration import Configuration
-from openapi_client.exceptions import OpenApiException
-from openapi_client.exceptions import ApiTypeError
-from openapi_client.exceptions import ApiValueError
-from openapi_client.exceptions import ApiKeyError
-from openapi_client.exceptions import ApiAttributeError
-from openapi_client.exceptions import ApiException
-
-# import models into sdk package
-from openapi_client.models.enrich_search200_response import EnrichSearch200Response
-from openapi_client.models.example_error import ExampleError
-from openapi_client.models.example_error_error import ExampleErrorError
-from openapi_client.models.fast_gpt200_response import FastGPT200Response
-from openapi_client.models.fast_gpt200_response_data import FastGPT200ResponseData
-from openapi_client.models.fast_gpt_request import FastGPTRequest
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
 from openapi_client.models.meta import Meta
-from openapi_client.models.meta_query import MetaQuery
-from openapi_client.models.meta_query_fields_inner import MetaQueryFieldsInner
-from openapi_client.models.result_adjacent_question import ResultAdjacentQuestion
-from openapi_client.models.result_adjacent_question_props import ResultAdjacentQuestionProps
-from openapi_client.models.result_infobox import ResultInfobox
-from openapi_client.models.result_infobox_props import ResultInfoboxProps
-from openapi_client.models.result_infobox_props_infobox_inner import ResultInfoboxPropsInfoboxInner
-from openapi_client.models.result_search import ResultSearch
-from openapi_client.models.result_search_image import ResultSearchImage
-from openapi_client.models.result_search_props import ResultSearchProps
-from openapi_client.models.result_search_props_thumbnail_image import ResultSearchPropsThumbnailImage
-from openapi_client.models.result_video import ResultVideo
-from openapi_client.models.result_video_props import ResultVideoProps
-from openapi_client.models.result_web_archive import ResultWebArchive
-from openapi_client.models.result_web_archive_props import ResultWebArchiveProps
-from openapi_client.models.search200_response import Search200Response
 from openapi_client.models.search200_response_data import Search200ResponseData
-from openapi_client.models.search_object import SearchObject
-from openapi_client.models.search_request import SearchRequest
-from openapi_client.models.summary import Summary
-from openapi_client.models.summary_data import SummaryData
-from openapi_client.models.upload_text import UploadText
+from typing import Optional, Set
+from typing_extensions import Self
+
+class Search200Response(BaseModel):
+    """
+    A response with a description and results references used
+    """ # noqa: E501
+    meta: Optional[Meta] = None
+    data: Optional[Search200ResponseData] = None
+    __properties: ClassVar[List[str]] = ["meta", "data"]
+
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
+
+
+    def to_str(self) -> str:
+        """Returns the string representation of the model using alias"""
+        return pprint.pformat(self.model_dump(by_alias=True))
+
+    def to_json(self) -> str:
+        """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
+        return json.dumps(self.to_dict())
+
+    @classmethod
+    def from_json(cls, json_str: str) -> Optional[Self]:
+        """Create an instance of Search200Response from a JSON string"""
+        return cls.from_dict(json.loads(json_str))
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
+        """
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
+        )
+        # override the default output from pydantic by calling `to_dict()` of meta
+        if self.meta:
+            _dict['meta'] = self.meta.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of data
+        if self.data:
+            _dict['data'] = self.data.to_dict()
+        return _dict
+
+    @classmethod
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+        """Create an instance of Search200Response from a dict"""
+        if obj is None:
+            return None
+
+        if not isinstance(obj, dict):
+            return cls.model_validate(obj)
+
+        _obj = cls.model_validate({
+            "meta": Meta.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
+            "data": Search200ResponseData.from_dict(obj["data"]) if obj.get("data") is not None else None
+        })
+        return _obj
+
+

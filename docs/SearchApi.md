@@ -4,11 +4,11 @@ All URIs are relative to *https://kagi.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**super_search**](SearchApi.md#super_search) | **GET** /search | Perform a search of the web.
+[**search**](SearchApi.md#search) | **GET** /search | Perform a search of the web.
 
 
-# **super_search**
-> SuperSearch200Response super_search(super_search_request)
+# **search**
+> Search200Response search(search_request)
 
 Perform a search of the web.
 
@@ -18,8 +18,8 @@ Perform a search of the web.
 
 ```python
 import openapi_client
-from openapi_client.models.super_search200_response import SuperSearch200Response
-from openapi_client.models.super_search_request import SuperSearchRequest
+from openapi_client.models.search200_response import Search200Response
+from openapi_client.models.search_request import SearchRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
@@ -44,15 +44,15 @@ configuration.api_key['kagi'] = os.environ["API_KEY"]
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SearchApi(api_client)
-    super_search_request = {"query":"steve jobs","workflow":"search"} # SuperSearchRequest | Contains the search query to run
+    search_request = {"query":"steve jobs","workflow":"search"} # SearchRequest | Contains the search query to run
 
     try:
         # Perform a search of the web.
-        api_response = api_instance.super_search(super_search_request)
-        print("The response of SearchApi->super_search:\n")
+        api_response = api_instance.search(search_request)
+        print("The response of SearchApi->search:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SearchApi->super_search: %s\n" % e)
+        print("Exception when calling SearchApi->search: %s\n" % e)
 ```
 
 
@@ -62,11 +62,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **super_search_request** | [**SuperSearchRequest**](SuperSearchRequest.md)| Contains the search query to run | 
+ **search_request** | [**SearchRequest**](SearchRequest.md)| Contains the search query to run | 
 
 ### Return type
 
-[**SuperSearch200Response**](SuperSearch200Response.md)
+[**Search200Response**](Search200Response.md)
 
 ### Authorization
 

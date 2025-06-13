@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
-
 """
     Kagi API
 
@@ -15,52 +13,42 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
+import unittest
 
-# import apis into sdk package
-from openapi_client.api.enrichment_api import EnrichmentApi
-from openapi_client.api.fast_gpt_api import FastGPTApi
-from openapi_client.api.search_api import SearchApi
-from openapi_client.api.summarizer_api import SummarizerApi
-
-# import ApiClient
-from openapi_client.api_response import ApiResponse
-from openapi_client.api_client import ApiClient
-from openapi_client.configuration import Configuration
-from openapi_client.exceptions import OpenApiException
-from openapi_client.exceptions import ApiTypeError
-from openapi_client.exceptions import ApiValueError
-from openapi_client.exceptions import ApiKeyError
-from openapi_client.exceptions import ApiAttributeError
-from openapi_client.exceptions import ApiException
-
-# import models into sdk package
-from openapi_client.models.enrich_search200_response import EnrichSearch200Response
-from openapi_client.models.example_error import ExampleError
-from openapi_client.models.example_error_error import ExampleErrorError
-from openapi_client.models.fast_gpt200_response import FastGPT200Response
-from openapi_client.models.fast_gpt200_response_data import FastGPT200ResponseData
-from openapi_client.models.fast_gpt_request import FastGPTRequest
-from openapi_client.models.meta import Meta
-from openapi_client.models.meta_query import MetaQuery
-from openapi_client.models.meta_query_fields_inner import MetaQueryFieldsInner
-from openapi_client.models.result_adjacent_question import ResultAdjacentQuestion
-from openapi_client.models.result_adjacent_question_props import ResultAdjacentQuestionProps
-from openapi_client.models.result_infobox import ResultInfobox
-from openapi_client.models.result_infobox_props import ResultInfoboxProps
-from openapi_client.models.result_infobox_props_infobox_inner import ResultInfoboxPropsInfoboxInner
-from openapi_client.models.result_search import ResultSearch
-from openapi_client.models.result_search_image import ResultSearchImage
-from openapi_client.models.result_search_props import ResultSearchProps
-from openapi_client.models.result_search_props_thumbnail_image import ResultSearchPropsThumbnailImage
-from openapi_client.models.result_video import ResultVideo
-from openapi_client.models.result_video_props import ResultVideoProps
-from openapi_client.models.result_web_archive import ResultWebArchive
-from openapi_client.models.result_web_archive_props import ResultWebArchiveProps
-from openapi_client.models.search200_response import Search200Response
-from openapi_client.models.search200_response_data import Search200ResponseData
-from openapi_client.models.search_object import SearchObject
 from openapi_client.models.search_request import SearchRequest
-from openapi_client.models.summary import Summary
-from openapi_client.models.summary_data import SummaryData
-from openapi_client.models.upload_text import UploadText
+
+class TestSearchRequest(unittest.TestCase):
+    """SearchRequest unit test stubs"""
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def make_instance(self, include_optional) -> SearchRequest:
+        """Test SearchRequest
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `SearchRequest`
+        """
+        model = SearchRequest()
+        if include_optional:
+            return SearchRequest(
+                query = '',
+                workflow = 'search'
+            )
+        else:
+            return SearchRequest(
+                query = '',
+        )
+        """
+
+    def testSearchRequest(self):
+        """Test SearchRequest"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
+
+if __name__ == '__main__':
+    unittest.main()

@@ -19,8 +19,8 @@ from typing_extensions import Annotated
 
 from pydantic import Field
 from typing_extensions import Annotated
-from openapi_client.models.super_search200_response import SuperSearch200Response
-from openapi_client.models.super_search_request import SuperSearchRequest
+from openapi_client.models.search200_response import Search200Response
+from openapi_client.models.search_request import SearchRequest
 
 from openapi_client.api_client import ApiClient, RequestSerialized
 from openapi_client.api_response import ApiResponse
@@ -41,9 +41,9 @@ class SearchApi:
 
 
     @validate_call
-    def super_search(
+    def search(
         self,
-        super_search_request: Annotated[SuperSearchRequest, Field(description="Contains the search query to run")],
+        search_request: Annotated[SearchRequest, Field(description="Contains the search query to run")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56,12 +56,12 @@ class SearchApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> SuperSearch200Response:
+    ) -> Search200Response:
         """Perform a search of the web.
 
 
-        :param super_search_request: Contains the search query to run (required)
-        :type super_search_request: SuperSearchRequest
+        :param search_request: Contains the search query to run (required)
+        :type search_request: SearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -84,8 +84,8 @@ class SearchApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._super_search_serialize(
-            super_search_request=super_search_request,
+        _param = self._search_serialize(
+            search_request=search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -93,7 +93,7 @@ class SearchApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SuperSearch200Response",
+            '200': "Search200Response",
             '401': "ExampleError",
         }
         response_data = self.api_client.call_api(
@@ -108,9 +108,9 @@ class SearchApi:
 
 
     @validate_call
-    def super_search_with_http_info(
+    def search_with_http_info(
         self,
-        super_search_request: Annotated[SuperSearchRequest, Field(description="Contains the search query to run")],
+        search_request: Annotated[SearchRequest, Field(description="Contains the search query to run")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -123,12 +123,12 @@ class SearchApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[SuperSearch200Response]:
+    ) -> ApiResponse[Search200Response]:
         """Perform a search of the web.
 
 
-        :param super_search_request: Contains the search query to run (required)
-        :type super_search_request: SuperSearchRequest
+        :param search_request: Contains the search query to run (required)
+        :type search_request: SearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -151,8 +151,8 @@ class SearchApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._super_search_serialize(
-            super_search_request=super_search_request,
+        _param = self._search_serialize(
+            search_request=search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -160,7 +160,7 @@ class SearchApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SuperSearch200Response",
+            '200': "Search200Response",
             '401': "ExampleError",
         }
         response_data = self.api_client.call_api(
@@ -175,9 +175,9 @@ class SearchApi:
 
 
     @validate_call
-    def super_search_without_preload_content(
+    def search_without_preload_content(
         self,
-        super_search_request: Annotated[SuperSearchRequest, Field(description="Contains the search query to run")],
+        search_request: Annotated[SearchRequest, Field(description="Contains the search query to run")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -194,8 +194,8 @@ class SearchApi:
         """Perform a search of the web.
 
 
-        :param super_search_request: Contains the search query to run (required)
-        :type super_search_request: SuperSearchRequest
+        :param search_request: Contains the search query to run (required)
+        :type search_request: SearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -218,8 +218,8 @@ class SearchApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._super_search_serialize(
-            super_search_request=super_search_request,
+        _param = self._search_serialize(
+            search_request=search_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -227,7 +227,7 @@ class SearchApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "SuperSearch200Response",
+            '200': "Search200Response",
             '401': "ExampleError",
         }
         response_data = self.api_client.call_api(
@@ -237,9 +237,9 @@ class SearchApi:
         return response_data.response
 
 
-    def _super_search_serialize(
+    def _search_serialize(
         self,
-        super_search_request,
+        search_request,
         _request_auth,
         _content_type,
         _headers,
@@ -265,8 +265,8 @@ class SearchApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if super_search_request is not None:
-            _body_params = super_search_request
+        if search_request is not None:
+            _body_params = search_request
 
 
         # set the HTTP header `Accept`

@@ -37,10 +37,10 @@ from openapi_client.models.result_video import ResultVideo
 from openapi_client.models.result_video_props import ResultVideoProps
 from openapi_client.models.result_web_archive import ResultWebArchive
 from openapi_client.models.result_web_archive_props import ResultWebArchiveProps
+from openapi_client.models.search200_response import Search200Response
+from openapi_client.models.search200_response_data import Search200ResponseData
 from openapi_client.models.search_object import SearchObject
+from openapi_client.models.search_request import SearchRequest
 from openapi_client.models.summary import Summary
 from openapi_client.models.summary_data import SummaryData
-from openapi_client.models.super_search200_response import SuperSearch200Response
-from openapi_client.models.super_search200_response_data import SuperSearch200ResponseData
-from openapi_client.models.super_search_request import SuperSearchRequest
 from openapi_client.models.upload_text import UploadText
