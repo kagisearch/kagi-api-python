@@ -27,8 +27,8 @@ class TestSearchApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_super_search(self) -> None:
-        """Test case for super_search
+    def test_search(self) -> None:
+        """Test case for search
 
         Perform a search of the web.
         """
