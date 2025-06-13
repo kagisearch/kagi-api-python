@@ -5,10 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | 
+**trace** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 **node** | **str** |  | 
 **ms** | **int** |  | 
-**api_balance** | **float** |  | [optional] 
+**query** | [**MetaQuery**](MetaQuery.md) |  | [optional] 
 
 ## Example
 

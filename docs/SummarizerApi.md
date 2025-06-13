@@ -1,6 +1,6 @@
 # openapi_client.SummarizerApi
 
-All URIs are relative to *https://kagi.com/api/v0*
+All URIs are relative to *https://kagi.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,10 +24,10 @@ from openapi_client.models.upload_text import UploadText
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://kagi.com/api/v0
+# Defining the host is optional and defaults to https://kagi.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://kagi.com/api/v0"
+    host = "https://kagi.com/api/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -110,10 +110,10 @@ from openapi_client.models.summary import Summary
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://kagi.com/api/v0
+# Defining the host is optional and defaults to https://kagi.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://kagi.com/api/v0"
+    host = "https://kagi.com/api/v1"
 )
 
 # The client must configure the authentication and authorization parameters

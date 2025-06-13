@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**search** | [**List[V1ResultSearch]**](V1ResultSearch.md) |  | [optional] 
-**video** | [**List[V1ResultVideo]**](V1ResultVideo.md) |  | [optional] 
-**adjacent_question** | [**List[V1ResultAdjacentQuestion]**](V1ResultAdjacentQuestion.md) |  | [optional] 
-**infobox** | [**List[V1ResultInfobox]**](V1ResultInfobox.md) |  | [optional] 
-**web_archive** | [**List[V1ResultWebArchive]**](V1ResultWebArchive.md) |  | [optional] 
+**search** | [**List[ResultSearch]**](ResultSearch.md) |  | [optional] 
+**video** | [**List[ResultVideo]**](ResultVideo.md) |  | [optional] 
+**adjacent_question** | [**List[ResultAdjacentQuestion]**](ResultAdjacentQuestion.md) |  | [optional] 
+**infobox** | [**List[ResultInfobox]**](ResultInfobox.md) |  | [optional] 
+**web_archive** | [**List[ResultWebArchive]**](ResultWebArchive.md) |  | [optional] 
 
 ## Example
 

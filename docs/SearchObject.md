@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **title** | **str** |  | 
 **snippet** | **str** |  | [optional] 
 **published** | **str** |  | [optional] 
-**thumbnail** | [**V1ResultSearchImage**](V1ResultSearchImage.md) |  | [optional] 
-**image** | [**V1ResultSearchImage**](V1ResultSearchImage.md) |  | [optional] 
+**thumbnail** | [**ResultSearchImage**](ResultSearchImage.md) |  | [optional] 
+**image** | [**ResultSearchImage**](ResultSearchImage.md) |  | [optional] 
 
 ## Example
 

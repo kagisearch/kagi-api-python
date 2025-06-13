@@ -1,6 +1,6 @@
 # openapi_client.EnrichmentApi
 
-All URIs are relative to *https://kagi.com/api/v0*
+All URIs are relative to *https://kagi.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,10 +22,10 @@ from openapi_client.models.enrich_search200_response import EnrichSearch200Respo
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://kagi.com/api/v0
+# Defining the host is optional and defaults to https://kagi.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://kagi.com/api/v0"
+    host = "https://kagi.com/api/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -43,7 +43,7 @@ configuration.api_key['kagi'] = os.environ["API_KEY"]
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.EnrichmentApi(api_client)
-    q = 'q_example' # str | Query to enrich
+    q = 'steve jobs' # str | Query to enrich
     type = web # str | Enrich with 'web' results or 'news' results (default to web)
 
     try:

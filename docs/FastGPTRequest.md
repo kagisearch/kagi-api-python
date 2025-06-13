@@ -1,12 +1,12 @@
 # FastGPTRequest
 
-Used to upload text to be summarized
+Used to upload the query to FastGPT
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**text** | **str** |  | [optional] 
+**query** | **str** |  | 
 **cache** | **bool** |  | [optional] [default to True]
 
 ## Example

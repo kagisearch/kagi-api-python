@@ -6,8 +6,8 @@ Used to upload the search query
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**query** | **str** |  | 
-**workflow** | **str** |  | [optional] 
+**query** | **str** | The search query to perform. | 
+**workflow** | **str** | Can be used to filter result output to a single category. | [optional] [default to 'search']
 
 ## Example
 

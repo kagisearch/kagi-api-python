@@ -6,7 +6,7 @@ A response with a description and results references used
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**V1Meta**](V1Meta.md) |  | [optional] 
+**meta** | [**Meta**](Meta.md) |  | [optional] 
 **data** | [**SuperSearch200ResponseData**](SuperSearch200ResponseData.md) |  | [optional] 
 
 ## Example

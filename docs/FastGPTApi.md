@@ -1,6 +1,6 @@
 # openapi_client.FastGPTApi
 
-All URIs are relative to *https://kagi.com/api/v0*
+All URIs are relative to *https://kagi.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,10 +25,10 @@ from openapi_client.models.fast_gpt_request import FastGPTRequest
 from openapi_client.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://kagi.com/api/v0
+# Defining the host is optional and defaults to https://kagi.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = openapi_client.Configuration(
-    host = "https://kagi.com/api/v0"
+    host = "https://kagi.com/api/v1"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -46,7 +46,7 @@ configuration.api_key['kagi'] = os.environ["API_KEY"]
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.FastGPTApi(api_client)
-    fast_gpt_request = openapi_client.FastGPTRequest() # FastGPTRequest | Contains the query to process.
+    fast_gpt_request = {"query":"who is steve jobs?","cache":true} # FastGPTRequest | Contains the query to process.
 
     try:
         # Answer a query.
