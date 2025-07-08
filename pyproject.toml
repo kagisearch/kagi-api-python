@@ -5,7 +5,7 @@ description = "Kagi API"
 authors = ["API Support <support@kagi.com>"]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/kagisearch/api-clients/out/go"
+repository = "https://github.com/kagisearch/kagi-api-python"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Kagi API"]
 include = ["openapi_client/py.typed"]
 
