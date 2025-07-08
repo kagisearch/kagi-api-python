@@ -4,7 +4,7 @@ All URIs are relative to *https://kagi.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**search**](SearchApi.md#search) | **GET** /search | Perform a search of the web.
+[**search**](SearchApi.md#search) | **POST** /search | Perform a search of the web.
 
 
 # **search**

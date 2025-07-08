@@ -5,11 +5,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**search** | [**List[ResultSearch]**](ResultSearch.md) |  | [optional] 
-**video** | [**List[ResultVideo]**](ResultVideo.md) |  | [optional] 
-**adjacent_question** | [**List[ResultAdjacentQuestion]**](ResultAdjacentQuestion.md) |  | [optional] 
-**infobox** | [**List[ResultInfobox]**](ResultInfobox.md) |  | [optional] 
-**web_archive** | [**List[ResultWebArchive]**](ResultWebArchive.md) |  | [optional] 
+**search** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**image** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**video** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**podcast** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**podcast_creator** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**news** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**adjacent_question** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**direct_answer** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**interesting_news** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**interesting_finds** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**infobox** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**code** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**package_tracking** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**public_records** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**weather** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**related_search** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**listicle** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
+**web_archive** | [**List[SearchResult]**](SearchResult.md) |  | [optional] 
 
 ## Example
 

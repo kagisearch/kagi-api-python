@@ -54,8 +54,6 @@ class TestMeta(unittest.TestCase):
             )
         else:
             return Meta(
-                node = '',
-                ms = 56,
         )
         """
 

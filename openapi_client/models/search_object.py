@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.result_search_image import ResultSearchImage
+from openapi_client.models.search_result_image import SearchResultImage
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,8 +34,8 @@ class SearchObject(BaseModel):
     title: StrictStr
     snippet: Optional[StrictStr] = None
     published: Optional[StrictStr] = None
-    thumbnail: Optional[ResultSearchImage] = None
-    image: Optional[ResultSearchImage] = None
+    thumbnail: Optional[SearchResultImage] = None
+    image: Optional[SearchResultImage] = None
     __properties: ClassVar[List[str]] = ["t", "rank", "url", "title", "snippet", "published", "thumbnail", "image"]
 
     model_config = ConfigDict(
@@ -101,8 +101,8 @@ class SearchObject(BaseModel):
             "title": obj.get("title"),
             "snippet": obj.get("snippet"),
             "published": obj.get("published"),
-            "thumbnail": ResultSearchImage.from_dict(obj["thumbnail"]) if obj.get("thumbnail") is not None else None,
-            "image": ResultSearchImage.from_dict(obj["image"]) if obj.get("image") is not None else None
+            "thumbnail": SearchResultImage.from_dict(obj["thumbnail"]) if obj.get("thumbnail") is not None else None,
+            "image": SearchResultImage.from_dict(obj["image"]) if obj.get("image") is not None else None
         })
         return _obj
 

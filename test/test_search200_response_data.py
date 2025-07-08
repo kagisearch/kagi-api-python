@@ -37,105 +37,220 @@ class TestSearch200ResponseData(unittest.TestCase):
         if include_optional:
             return Search200ResponseData(
                 search = [
-                    openapi_client.models.result_search.resultSearch(
+                    openapi_client.models.search_result.searchResult(
                         url = '', 
                         title = '', 
                         snippet = '', 
                         time = '', 
-                        image = openapi_client.models.result_search_image.resultSearch_image(
+                        image = openapi_client.models.search_result_image.searchResult_image(
                             url = '', 
                             height = 56, 
                             width = 56, ), 
-                        props = openapi_client.models.result_search_props.resultSearch_props(
-                            thumbnail_image = openapi_client.models.result_search_props_thumbnail_image.resultSearch_props_thumbnail_image(
-                                url = '', 
-                                height = 56, 
-                                width = 56, ), 
-                            language = '', 
-                            language_probability = 1.337, 
-                            paywalled = True, 
-                            sort_normalize_url = '', 
-                            sort_group_id = '', 
-                            source_history = [
-                                ''
-                                ], ), )
+                        props = { }, )
+                    ],
+                image = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
                     ],
                 video = [
-                    openapi_client.models.result_video.resultVideo(
+                    openapi_client.models.search_result.searchResult(
                         url = '', 
                         title = '', 
                         snippet = '', 
                         time = '', 
-                        image = openapi_client.models.result_search_image.resultSearch_image(
+                        image = openapi_client.models.search_result_image.searchResult_image(
                             url = '', 
                             height = 56, 
                             width = 56, ), 
-                        props = openapi_client.models.result_video_props.resultVideo_props(
-                            hires_thumbnail_url = '', 
-                            sort_normalize_url = '', 
-                            sort_group_id = '', 
-                            language = '', 
-                            language_probability = 1.337, 
-                            source_history = [
-                                ''
-                                ], ), )
+                        props = { }, )
+                    ],
+                podcast = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                podcast_creator = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                news = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
                     ],
                 adjacent_question = [
-                    openapi_client.models.result_adjacent_question.resultAdjacentQuestion(
+                    openapi_client.models.search_result.searchResult(
                         url = '', 
                         title = '', 
                         snippet = '', 
                         time = '', 
-                        image = openapi_client.models.result_search_image.resultSearch_image(
+                        image = openapi_client.models.search_result_image.searchResult_image(
                             url = '', 
                             height = 56, 
                             width = 56, ), 
-                        props = openapi_client.models.result_adjacent_question_props.resultAdjacentQuestion_props(
-                            question = '', 
-                            language = '', 
-                            language_probability = 1.337, ), )
+                        props = { }, )
+                    ],
+                direct_answer = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                interesting_news = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                interesting_finds = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
                     ],
                 infobox = [
-                    openapi_client.models.result_infobox.resultInfobox(
+                    openapi_client.models.search_result.searchResult(
                         url = '', 
                         title = '', 
                         snippet = '', 
                         time = '', 
-                        image = openapi_client.models.result_search_image.resultSearch_image(
+                        image = openapi_client.models.search_result_image.searchResult_image(
                             url = '', 
                             height = 56, 
                             width = 56, ), 
-                        props = openapi_client.models.result_infobox_props.resultInfobox_props(
-                            infobox = [
-                                openapi_client.models.result_infobox_props_infobox_inner.resultInfobox_props_infobox_inner(
-                                    header = '', 
-                                    value = '', 
-                                    merged = True, )
-                                ], 
-                            wikipedia/subtext = '', 
-                            wikipedia/page_id = 56, 
-                            language = '', 
-                            language_probability = 1.337, 
-                            sort_normalize_url = '', 
-                            sort_group_id = '', 
-                            source_history = [
-                                ''
-                                ], ), )
+                        props = { }, )
+                    ],
+                code = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                package_tracking = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                public_records = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                weather = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                related_search = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
+                    ],
+                listicle = [
+                    openapi_client.models.search_result.searchResult(
+                        url = '', 
+                        title = '', 
+                        snippet = '', 
+                        time = '', 
+                        image = openapi_client.models.search_result_image.searchResult_image(
+                            url = '', 
+                            height = 56, 
+                            width = 56, ), 
+                        props = { }, )
                     ],
                 web_archive = [
-                    openapi_client.models.result_web_archive.resultWebArchive(
+                    openapi_client.models.search_result.searchResult(
                         url = '', 
                         title = '', 
                         snippet = '', 
                         time = '', 
-                        image = openapi_client.models.result_search_image.resultSearch_image(
+                        image = openapi_client.models.search_result_image.searchResult_image(
                             url = '', 
                             height = 56, 
                             width = 56, ), 
-                        props = openapi_client.models.result_web_archive_props.resultWebArchive_props(
-                            web_archive_domain = '', 
-                            language = '', 
-                            language_probability = 1.337, ), )
+                        props = { }, )
                     ]
             )
         else:

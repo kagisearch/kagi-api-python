@@ -30,8 +30,8 @@ class Meta(BaseModel):
     """ # noqa: E501
     trace: Optional[StrictStr] = None
     id: Optional[StrictStr] = None
-    node: StrictStr
-    ms: StrictInt
+    node: Optional[StrictStr] = None
+    ms: Optional[StrictInt] = None
     query: Optional[MetaQuery] = None
     __properties: ClassVar[List[str]] = ["trace", "id", "node", "ms", "query"]
 

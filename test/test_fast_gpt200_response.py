@@ -63,11 +63,11 @@ class TestFastGPT200Response(unittest.TestCase):
                             title = '', 
                             snippet = '', 
                             published = '', 
-                            thumbnail = openapi_client.models.result_search_image.resultSearch_image(
+                            thumbnail = openapi_client.models.search_result_image.searchResult_image(
                                 url = '', 
                                 height = 56, 
                                 width = 56, ), 
-                            image = openapi_client.models.result_search_image.resultSearch_image(
+                            image = openapi_client.models.search_result_image.searchResult_image(
                                 url = '', 
                                 height = 56, 
                                 width = 56, ), )

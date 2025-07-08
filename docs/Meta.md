@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **trace** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**node** | **str** |  | 
-**ms** | **int** |  | 
+**node** | **str** |  | [optional] 
+**ms** | **int** |  | [optional] 
 **query** | [**MetaQuery**](MetaQuery.md) |  | [optional] 
 
 ## Example

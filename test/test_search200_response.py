@@ -54,56 +54,71 @@ class TestSearch200Response(unittest.TestCase):
                         workflow = '', ), ),
                 data = openapi_client.models.search_200_response_data.search_200_response_data(
                     search = [
-                        openapi_client.models.result_search.resultSearch(
+                        openapi_client.models.search_result.searchResult(
                             url = '', 
                             title = '', 
                             snippet = '', 
                             time = '', 
-                            image = openapi_client.models.result_search_image.resultSearch_image(
+                            image = openapi_client.models.search_result_image.searchResult_image(
                                 url = '', 
                                 height = 56, 
                                 width = 56, ), 
-                            props = openapi_client.models.result_search_props.resultSearch_props(
-                                thumbnail_image = openapi_client.models.result_search_props_thumbnail_image.resultSearch_props_thumbnail_image(
-                                    url = '', 
-                                    height = 56, 
-                                    width = 56, ), 
-                                language = '', 
-                                language_probability = 1.337, 
-                                paywalled = True, 
-                                sort_normalize_url = '', 
-                                sort_group_id = '', 
-                                source_history = [
-                                    ''
-                                    ], ), )
+                            props = { }, )
+                        ], 
+                    image = [
+                        openapi_client.models.search_result.searchResult(
+                            url = '', 
+                            title = '', 
+                            snippet = '', 
+                            time = '', )
                         ], 
                     video = [
-                        openapi_client.models.result_video.resultVideo(
-                            url = '', 
-                            title = '', 
-                            snippet = '', 
-                            time = '', )
+                        
+                        ], 
+                    podcast = [
+                        
+                        ], 
+                    podcast_creator = [
+                        
+                        ], 
+                    news = [
+                        
                         ], 
                     adjacent_question = [
-                        openapi_client.models.result_adjacent_question.resultAdjacentQuestion(
-                            url = '', 
-                            title = '', 
-                            snippet = '', 
-                            time = '', )
+                        
+                        ], 
+                    direct_answer = [
+                        
+                        ], 
+                    interesting_news = [
+                        
+                        ], 
+                    interesting_finds = [
+                        
                         ], 
                     infobox = [
-                        openapi_client.models.result_infobox.resultInfobox(
-                            url = '', 
-                            title = '', 
-                            snippet = '', 
-                            time = '', )
+                        
+                        ], 
+                    code = [
+                        
+                        ], 
+                    package_tracking = [
+                        
+                        ], 
+                    public_records = [
+                        
+                        ], 
+                    weather = [
+                        
+                        ], 
+                    related_search = [
+                        
+                        ], 
+                    listicle = [
+                        
                         ], 
                     web_archive = [
-                        openapi_client.models.result_web_archive.resultWebArchive(
-                            url = '', 
-                            title = '', 
-                            snippet = '', 
-                            time = '', )
+                        
                         ], )
             )
         else:

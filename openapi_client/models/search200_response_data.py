@@ -20,11 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.result_adjacent_question import ResultAdjacentQuestion
-from openapi_client.models.result_infobox import ResultInfobox
-from openapi_client.models.result_search import ResultSearch
-from openapi_client.models.result_video import ResultVideo
-from openapi_client.models.result_web_archive import ResultWebArchive
+from openapi_client.models.search_result import SearchResult
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,12 +28,25 @@ class Search200ResponseData(BaseModel):
     """
     Search200ResponseData
     """ # noqa: E501
-    search: Optional[List[ResultSearch]] = None
-    video: Optional[List[ResultVideo]] = None
-    adjacent_question: Optional[List[ResultAdjacentQuestion]] = None
-    infobox: Optional[List[ResultInfobox]] = None
-    web_archive: Optional[List[ResultWebArchive]] = None
-    __properties: ClassVar[List[str]] = ["search", "video", "adjacent_question", "infobox", "web_archive"]
+    search: Optional[List[SearchResult]] = None
+    image: Optional[List[SearchResult]] = None
+    video: Optional[List[SearchResult]] = None
+    podcast: Optional[List[SearchResult]] = None
+    podcast_creator: Optional[List[SearchResult]] = None
+    news: Optional[List[SearchResult]] = None
+    adjacent_question: Optional[List[SearchResult]] = None
+    direct_answer: Optional[List[SearchResult]] = None
+    interesting_news: Optional[List[SearchResult]] = None
+    interesting_finds: Optional[List[SearchResult]] = None
+    infobox: Optional[List[SearchResult]] = None
+    code: Optional[List[SearchResult]] = None
+    package_tracking: Optional[List[SearchResult]] = None
+    public_records: Optional[List[SearchResult]] = None
+    weather: Optional[List[SearchResult]] = None
+    related_search: Optional[List[SearchResult]] = None
+    listicle: Optional[List[SearchResult]] = None
+    web_archive: Optional[List[SearchResult]] = None
+    __properties: ClassVar[List[str]] = ["search", "image", "video", "podcast", "podcast_creator", "news", "adjacent_question", "direct_answer", "interesting_news", "interesting_finds", "infobox", "code", "package_tracking", "public_records", "weather", "related_search", "listicle", "web_archive"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +94,13 @@ class Search200ResponseData(BaseModel):
                 if _item_search:
                     _items.append(_item_search.to_dict())
             _dict['search'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in image (list)
+        _items = []
+        if self.image:
+            for _item_image in self.image:
+                if _item_image:
+                    _items.append(_item_image.to_dict())
+            _dict['image'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in video (list)
         _items = []
         if self.video:
@@ -92,6 +108,27 @@ class Search200ResponseData(BaseModel):
                 if _item_video:
                     _items.append(_item_video.to_dict())
             _dict['video'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in podcast (list)
+        _items = []
+        if self.podcast:
+            for _item_podcast in self.podcast:
+                if _item_podcast:
+                    _items.append(_item_podcast.to_dict())
+            _dict['podcast'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in podcast_creator (list)
+        _items = []
+        if self.podcast_creator:
+            for _item_podcast_creator in self.podcast_creator:
+                if _item_podcast_creator:
+                    _items.append(_item_podcast_creator.to_dict())
+            _dict['podcast_creator'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in news (list)
+        _items = []
+        if self.news:
+            for _item_news in self.news:
+                if _item_news:
+                    _items.append(_item_news.to_dict())
+            _dict['news'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in adjacent_question (list)
         _items = []
         if self.adjacent_question:
@@ -99,6 +136,27 @@ class Search200ResponseData(BaseModel):
                 if _item_adjacent_question:
                     _items.append(_item_adjacent_question.to_dict())
             _dict['adjacent_question'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in direct_answer (list)
+        _items = []
+        if self.direct_answer:
+            for _item_direct_answer in self.direct_answer:
+                if _item_direct_answer:
+                    _items.append(_item_direct_answer.to_dict())
+            _dict['direct_answer'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in interesting_news (list)
+        _items = []
+        if self.interesting_news:
+            for _item_interesting_news in self.interesting_news:
+                if _item_interesting_news:
+                    _items.append(_item_interesting_news.to_dict())
+            _dict['interesting_news'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in interesting_finds (list)
+        _items = []
+        if self.interesting_finds:
+            for _item_interesting_finds in self.interesting_finds:
+                if _item_interesting_finds:
+                    _items.append(_item_interesting_finds.to_dict())
+            _dict['interesting_finds'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in infobox (list)
         _items = []
         if self.infobox:
@@ -106,6 +164,48 @@ class Search200ResponseData(BaseModel):
                 if _item_infobox:
                     _items.append(_item_infobox.to_dict())
             _dict['infobox'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in code (list)
+        _items = []
+        if self.code:
+            for _item_code in self.code:
+                if _item_code:
+                    _items.append(_item_code.to_dict())
+            _dict['code'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in package_tracking (list)
+        _items = []
+        if self.package_tracking:
+            for _item_package_tracking in self.package_tracking:
+                if _item_package_tracking:
+                    _items.append(_item_package_tracking.to_dict())
+            _dict['package_tracking'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in public_records (list)
+        _items = []
+        if self.public_records:
+            for _item_public_records in self.public_records:
+                if _item_public_records:
+                    _items.append(_item_public_records.to_dict())
+            _dict['public_records'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in weather (list)
+        _items = []
+        if self.weather:
+            for _item_weather in self.weather:
+                if _item_weather:
+                    _items.append(_item_weather.to_dict())
+            _dict['weather'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in related_search (list)
+        _items = []
+        if self.related_search:
+            for _item_related_search in self.related_search:
+                if _item_related_search:
+                    _items.append(_item_related_search.to_dict())
+            _dict['related_search'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in listicle (list)
+        _items = []
+        if self.listicle:
+            for _item_listicle in self.listicle:
+                if _item_listicle:
+                    _items.append(_item_listicle.to_dict())
+            _dict['listicle'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in web_archive (list)
         _items = []
         if self.web_archive:
@@ -125,11 +225,24 @@ class Search200ResponseData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "search": [ResultSearch.from_dict(_item) for _item in obj["search"]] if obj.get("search") is not None else None,
-            "video": [ResultVideo.from_dict(_item) for _item in obj["video"]] if obj.get("video") is not None else None,
-            "adjacent_question": [ResultAdjacentQuestion.from_dict(_item) for _item in obj["adjacent_question"]] if obj.get("adjacent_question") is not None else None,
-            "infobox": [ResultInfobox.from_dict(_item) for _item in obj["infobox"]] if obj.get("infobox") is not None else None,
-            "web_archive": [ResultWebArchive.from_dict(_item) for _item in obj["web_archive"]] if obj.get("web_archive") is not None else None
+            "search": [SearchResult.from_dict(_item) for _item in obj["search"]] if obj.get("search") is not None else None,
+            "image": [SearchResult.from_dict(_item) for _item in obj["image"]] if obj.get("image") is not None else None,
+            "video": [SearchResult.from_dict(_item) for _item in obj["video"]] if obj.get("video") is not None else None,
+            "podcast": [SearchResult.from_dict(_item) for _item in obj["podcast"]] if obj.get("podcast") is not None else None,
+            "podcast_creator": [SearchResult.from_dict(_item) for _item in obj["podcast_creator"]] if obj.get("podcast_creator") is not None else None,
+            "news": [SearchResult.from_dict(_item) for _item in obj["news"]] if obj.get("news") is not None else None,
+            "adjacent_question": [SearchResult.from_dict(_item) for _item in obj["adjacent_question"]] if obj.get("adjacent_question") is not None else None,
+            "direct_answer": [SearchResult.from_dict(_item) for _item in obj["direct_answer"]] if obj.get("direct_answer") is not None else None,
+            "interesting_news": [SearchResult.from_dict(_item) for _item in obj["interesting_news"]] if obj.get("interesting_news") is not None else None,
+            "interesting_finds": [SearchResult.from_dict(_item) for _item in obj["interesting_finds"]] if obj.get("interesting_finds") is not None else None,
+            "infobox": [SearchResult.from_dict(_item) for _item in obj["infobox"]] if obj.get("infobox") is not None else None,
+            "code": [SearchResult.from_dict(_item) for _item in obj["code"]] if obj.get("code") is not None else None,
+            "package_tracking": [SearchResult.from_dict(_item) for _item in obj["package_tracking"]] if obj.get("package_tracking") is not None else None,
+            "public_records": [SearchResult.from_dict(_item) for _item in obj["public_records"]] if obj.get("public_records") is not None else None,
+            "weather": [SearchResult.from_dict(_item) for _item in obj["weather"]] if obj.get("weather") is not None else None,
+            "related_search": [SearchResult.from_dict(_item) for _item in obj["related_search"]] if obj.get("related_search") is not None else None,
+            "listicle": [SearchResult.from_dict(_item) for _item in obj["listicle"]] if obj.get("listicle") is not None else None,
+            "web_archive": [SearchResult.from_dict(_item) for _item in obj["web_archive"]] if obj.get("web_archive") is not None else None
         })
         return _obj
 

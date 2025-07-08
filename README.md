@@ -154,9 +154,16 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EnrichmentApi* | [**enrich_search**](docs/EnrichmentApi.md#enrich_search) | **GET** /enrich/{type} | Get enriched search results
 *FastGPTApi* | [**fast_gpt**](docs/FastGPTApi.md#fast_gpt) | **POST** /fastgpt | Answer a query.
-*SearchApi* | [**search**](docs/SearchApi.md#search) | **GET** /search | Perform a search of the web.
+*SearchApi* | [**search**](docs/SearchApi.md#search) | **POST** /search | Perform a search of the web.
 *SummarizerApi* | [**summarize_text**](docs/SummarizerApi.md#summarize_text) | **POST** /summarize | Upload text to summarize.
 *SummarizerApi* | [**summarize_url**](docs/SummarizerApi.md#summarize_url) | **GET** /summarize | Get a summary for a URL
+*TranslateApi* | [**translate**](docs/TranslateApi.md#translate) | **POST** /api/translate | Text Translation
+*TranslateApi* | [**translate_alternatives**](docs/TranslateApi.md#translate_alternatives) | **POST** /alternative-translations | Alternative Translations
+*TranslateApi* | [**translate_detect**](docs/TranslateApi.md#translate_detect) | **POST** /api/detect | Language Detection
+*TranslateApi* | [**translate_dictionary**](docs/TranslateApi.md#translate_dictionary) | **POST** /api/dictionary | Dictionary
+*TranslateApi* | [**translate_list_languages**](docs/TranslateApi.md#translate_list_languages) | **GET** /api/list-languages | List Supported Languages
+*TranslateApi* | [**translate_romanize**](docs/TranslateApi.md#translate_romanize) | **GET** /api/romanize | Text Romanization
+*TranslateApi* | [**translate_word_insights**](docs/TranslateApi.md#translate_word_insights) | **POST** /api/word-insights | Word Insights
 
 
 ## Documentation For Models
@@ -170,25 +177,48 @@ Class | Method | HTTP request | Description
  - [Meta](docs/Meta.md)
  - [MetaQuery](docs/MetaQuery.md)
  - [MetaQueryFieldsInner](docs/MetaQueryFieldsInner.md)
- - [ResultAdjacentQuestion](docs/ResultAdjacentQuestion.md)
- - [ResultAdjacentQuestionProps](docs/ResultAdjacentQuestionProps.md)
- - [ResultInfobox](docs/ResultInfobox.md)
- - [ResultInfoboxProps](docs/ResultInfoboxProps.md)
- - [ResultInfoboxPropsInfoboxInner](docs/ResultInfoboxPropsInfoboxInner.md)
- - [ResultSearch](docs/ResultSearch.md)
- - [ResultSearchImage](docs/ResultSearchImage.md)
- - [ResultSearchProps](docs/ResultSearchProps.md)
- - [ResultSearchPropsThumbnailImage](docs/ResultSearchPropsThumbnailImage.md)
- - [ResultVideo](docs/ResultVideo.md)
- - [ResultVideoProps](docs/ResultVideoProps.md)
- - [ResultWebArchive](docs/ResultWebArchive.md)
- - [ResultWebArchiveProps](docs/ResultWebArchiveProps.md)
  - [Search200Response](docs/Search200Response.md)
  - [Search200ResponseData](docs/Search200ResponseData.md)
  - [SearchObject](docs/SearchObject.md)
  - [SearchRequest](docs/SearchRequest.md)
+ - [SearchResult](docs/SearchResult.md)
+ - [SearchResultImage](docs/SearchResultImage.md)
  - [Summary](docs/Summary.md)
  - [SummaryData](docs/SummaryData.md)
+ - [Translate200Response](docs/Translate200Response.md)
+ - [Translate200ResponseOneOf](docs/Translate200ResponseOneOf.md)
+ - [Translate200ResponseOneOf1](docs/Translate200ResponseOneOf1.md)
+ - [Translate200ResponseOneOfDefinition](docs/Translate200ResponseOneOfDefinition.md)
+ - [Translate200ResponseOneOfDefinitionDefinitionsInner](docs/Translate200ResponseOneOfDefinitionDefinitionsInner.md)
+ - [Translate200ResponseOneOfDefinitionDefinitionsInnerMeaningsInner](docs/Translate200ResponseOneOfDefinitionDefinitionsInnerMeaningsInner.md)
+ - [Translate200ResponseOneOfDetectedLanguage](docs/Translate200ResponseOneOfDetectedLanguage.md)
+ - [Translate400Response](docs/Translate400Response.md)
+ - [Translate500Response](docs/Translate500Response.md)
+ - [TranslateAlternatives200Response](docs/TranslateAlternatives200Response.md)
+ - [TranslateAlternatives200ResponseElementsInner](docs/TranslateAlternatives200ResponseElementsInner.md)
+ - [TranslateAlternatives401Response](docs/TranslateAlternatives401Response.md)
+ - [TranslateAlternatives402Response](docs/TranslateAlternatives402Response.md)
+ - [TranslateAlternatives500Response](docs/TranslateAlternatives500Response.md)
+ - [TranslateDetect200Response](docs/TranslateDetect200Response.md)
+ - [TranslateDetect400Response](docs/TranslateDetect400Response.md)
+ - [TranslateDetectRequest](docs/TranslateDetectRequest.md)
+ - [TranslateDictionary200Response](docs/TranslateDictionary200Response.md)
+ - [TranslateDictionary200ResponseDefinition](docs/TranslateDictionary200ResponseDefinition.md)
+ - [TranslateDictionary200ResponseDefinitionPrimaryMeaning](docs/TranslateDictionary200ResponseDefinitionPrimaryMeaning.md)
+ - [TranslateDictionary200ResponseDefinitionSecondaryMeaningsInner](docs/TranslateDictionary200ResponseDefinitionSecondaryMeaningsInner.md)
+ - [TranslateDictionary200ResponseLanguage](docs/TranslateDictionary200ResponseLanguage.md)
+ - [TranslateDictionary400Response](docs/TranslateDictionary400Response.md)
+ - [TranslateDictionary500Response](docs/TranslateDictionary500Response.md)
+ - [TranslateDictionaryRequest](docs/TranslateDictionaryRequest.md)
+ - [TranslateListLanguages200ResponseInner](docs/TranslateListLanguages200ResponseInner.md)
+ - [TranslateRequest](docs/TranslateRequest.md)
+ - [TranslateRequestText](docs/TranslateRequestText.md)
+ - [TranslateRomanize200Response](docs/TranslateRomanize200Response.md)
+ - [TranslateWordInsights200Response](docs/TranslateWordInsights200Response.md)
+ - [TranslateWordInsights200ResponseInsightsInner](docs/TranslateWordInsights200ResponseInsightsInner.md)
+ - [TranslateWordInsights200ResponseInsightsInnerVariationsInner](docs/TranslateWordInsights200ResponseInsightsInnerVariationsInner.md)
+ - [TranslateWordInsights400Response](docs/TranslateWordInsights400Response.md)
+ - [TranslateWordInsights500Response](docs/TranslateWordInsights500Response.md)
  - [UploadText](docs/UploadText.md)
 
 
@@ -203,6 +233,11 @@ Authentication schemes defined for the API:
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+<a id="kagi-translate"></a>
+### kagi-translate
+
+- **Type**: Bearer authentication
 
 
 ## Author

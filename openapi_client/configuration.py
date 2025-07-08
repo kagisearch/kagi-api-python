@@ -115,6 +115,7 @@ AuthSettings = TypedDict(
     "AuthSettings",
     {
         "kagi": APIKeyAuthSetting,
+        "kagi-translate": BearerAuthSetting,
     },
     total=False,
 )
@@ -520,6 +521,13 @@ conf = openapi_client.Configuration(
                 'value': self.get_api_key_with_prefix(
                     'kagi',
                 ),
+            }
+        if self.access_token is not None:
+            auth['kagi-translate'] = {
+                'type': 'bearer',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': 'Bearer ' + self.access_token
             }
         return auth
 
