@@ -3,7 +3,7 @@
 """
     Kagi API
 
-    The Kagi API provides programmatic access to data that powers our search results & more.   Quick start for all APIs:  - Create an account at [Kagi](https://kagi.com/signup) - Generate an [API key](https://kagi.com/settings?p=api) - Call the API  We have the following APIs available. ### Commercial  - Kagi Search API (invite only at the moment) - Web and News Enrichment API (public, exposes Kagi's own indexes Teclis and TinyGem) - Universal Summarizer API (public) - FastGPT API (public)  ### Free  - Kagi Small Web RSS feed (public)  ### Official Client Libraries  We offer the following libraries you can use to interact with the Kagi API. These are generated from an OpenAPI spec. If you have a language you would like to use and it's not in the list, send us a message and we will add it to the list if it is supported. Or you can use the [spec](https://wild-wombat.redocly.app/_spec/openapi.yaml?download) to build your own custom library.  - [Golang](https://github.com/kagisearch/kagi-api-golang) - [Python](https://github.com/kagisearch/kagi-api-python)  ### Unofficial Client Libraries  There also exist third party libraries for interacting with the Kagi API.  - [kagigo for Go](https://github.com/httpjamesm/kagigo) - FastGPT & Universal Summarizer - [kagi-api](https://crates.io/crates/kagi-api) for Rust - [kagi-api](https://alchemists.io/projects/kagi-api) for Ruby - [kagi-dotnet](https://github.com/patchoulish/kagi-dotnet) for C#/.NET  ### API Status  Our existing API, the \"v0\" beta API, is being replaced with a new version that will be available publicly soon. As changes are made, we will be updating the documentation below when the new features become available.  See the [Support and Community](https://help.kagi.com/kagi/support-and-community/) section for details. ### Pricing  We are in the process of moving all APIs to a post-paid tiered system, where each tier has a limit on the number of requests that can be made. If an API has a pricing section, then it is still being migrated over to the new billing system.  ### GitHub Discussions  This is the preferred venue for bug reports and feature requests.  - [Bug Reports](https://github.com/kagisearch/kagi-docs/issues/new/choose) - [Q&A Forum](https://github.com/kagisearch/kagi-docs/discussions/categories/q-a?discussions_q=category%3AQ%26A+label%3Aproduct%3Akagi_search_api) - [API Feature Requests](https://github.com/kagisearch/kagi-docs/discussions/categories/kagi-search-api-feature-requests-ideas)  ### Discord Join our [Discord](https://kagi.com/discord)! Good for quick questions or chatting about things you've made with our APIs! 
+    The Kagi API provides programmatic access to data that powers our search results & more.   Quick start for all APIs:  - Create an account at [Kagi](https://kagi.com/signup) - Generate an [API key](https://kagi.com/settings?p=api) - Call the API  We have the following APIs available. ### Commercial  - Kagi Search API (invite only at the moment) - Web and News Enrichment API (public, exposes Kagi's own indexes Teclis and TinyGem) - Universal Summarizer API (public) - FastGPT API (public)  ### Free  - Kagi Small Web RSS feed (public)  ### Official Client Libraries  We offer the following libraries you can use to interact with the Kagi API. These are generated from an OpenAPI spec. If you have a language you would like to use and it's not in the list, send us a message and we will add it to the list if it is supported. Or you can use the [spec](https://wild-wombat.redocly.app/_spec/openapi.yaml?download) to build your own custom library.  - [Golang](https://github.com/kagisearch/kagi-api-golang) - [Python](https://github.com/kagisearch/kagi-api-python) - [Rust](https://github.com/kagisearch/kagi-api-rust)  ### Unofficial Client Libraries  There also exist third party libraries for interacting with the Kagi API.  - [kagigo for Go](https://github.com/httpjamesm/kagigo) - FastGPT & Universal Summarizer - [kagi-api](https://crates.io/crates/kagi-api) for Rust - [kagi-api](https://alchemists.io/projects/kagi-api) for Ruby - [kagi-dotnet](https://github.com/patchoulish/kagi-dotnet) for C#/.NET  ### API Status  Our existing API, the \"v0\" beta API, is being replaced with a new version that will be available publicly soon. As changes are made, we will be updating the documentation below when the new features become available.  See the [Support and Community](https://help.kagi.com/kagi/support-and-community/) section for details. ### Pricing  We are in the process of moving all APIs to a post-paid tiered system, where each tier has a limit on the number of requests that can be made. If an API has a pricing section, then it is still being migrated over to the new billing system.  ### GitHub Discussions  This is the preferred venue for bug reports and feature requests.  - [Bug Reports](https://github.com/kagisearch/kagi-docs/issues/new/choose) - [Q&A Forum](https://github.com/kagisearch/kagi-docs/discussions/categories/q-a?discussions_q=category%3AQ%26A+label%3Aproduct%3Akagi_search_api) - [API Feature Requests](https://github.com/kagisearch/kagi-docs/discussions/categories/kagi-search-api-feature-requests-ideas)  ### Discord Join our [Discord](https://kagi.com/discord)! Good for quick questions or chatting about things you've made with our APIs! 
 
     The version of the OpenAPI document: 0.1.0
     Contact: support@kagi.com
@@ -36,22 +36,7 @@ class TestEnrichSearch200Response(unittest.TestCase):
         model = EnrichSearch200Response()
         if include_optional:
             return EnrichSearch200Response(
-                meta = openapi_client.models.meta.meta(
-                    trace = '', 
-                    id = '', 
-                    node = '', 
-                    ms = 56, 
-                    query = openapi_client.models.meta_query.meta_query(
-                        raw = '', 
-                        terms = '', 
-                        fields = [
-                            openapi_client.models.meta_query_fields_inner.meta_query_fields_inner(
-                                kind = '', 
-                                value = '', 
-                                name = '', 
-                                negate = True, )
-                            ], 
-                        workflow = '', ), ),
+                meta = { },
                 data = [
                     openapi_client.models.search_object.searchObject(
                         t = 56, 
@@ -60,11 +45,11 @@ class TestEnrichSearch200Response(unittest.TestCase):
                         title = '', 
                         snippet = '', 
                         published = '', 
-                        thumbnail = openapi_client.models.search_result_image.searchResult_image(
+                        thumbnail = openapi_client.models.search_object_thumbnail.searchObject_thumbnail(
                             url = '', 
                             height = 56, 
                             width = 56, ), 
-                        image = openapi_client.models.search_result_image.searchResult_image(
+                        image = openapi_client.models.search_object_image.searchObject_image(
                             url = '', 
                             height = 56, 
                             width = 56, ), )

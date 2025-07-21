@@ -25,6 +25,7 @@ We offer the following libraries you can use to interact with the Kagi API. Thes
 
 - [Golang](https://github.com/kagisearch/kagi-api-golang)
 - [Python](https://github.com/kagisearch/kagi-api-python)
+- [Rust](https://github.com/kagisearch/kagi-api-rust)
 
 ### Unofficial Client Libraries
 
@@ -175,11 +176,11 @@ Class | Method | HTTP request | Description
  - [FastGPT200ResponseData](docs/FastGPT200ResponseData.md)
  - [FastGPTRequest](docs/FastGPTRequest.md)
  - [Meta](docs/Meta.md)
- - [MetaQuery](docs/MetaQuery.md)
- - [MetaQueryFieldsInner](docs/MetaQueryFieldsInner.md)
  - [Search200Response](docs/Search200Response.md)
  - [Search200ResponseData](docs/Search200ResponseData.md)
  - [SearchObject](docs/SearchObject.md)
+ - [SearchObjectImage](docs/SearchObjectImage.md)
+ - [SearchObjectThumbnail](docs/SearchObjectThumbnail.md)
  - [SearchRequest](docs/SearchRequest.md)
  - [SearchResult](docs/SearchResult.md)
  - [SearchResultImage](docs/SearchResultImage.md)

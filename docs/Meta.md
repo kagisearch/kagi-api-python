@@ -1,15 +1,15 @@
 # Meta
 
+This object is subject to change as it is provided for debugging purposes. Fields may be added or removed as required. Don't build any hard dependancies on any of this data.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**trace** | **str** |  | [optional] 
+**trace** | **str** | Trace ID that can be used to debug individual API requests. Provide this, if needed, when contacting Kagi support. | [optional] 
 **id** | **str** |  | [optional] 
-**node** | **str** |  | [optional] 
-**ms** | **int** |  | [optional] 
-**query** | [**MetaQuery**](MetaQuery.md) |  | [optional] 
+**node** | **str** | The hostname of the node that fulfilled the request. | [optional] 
+**ms** | **int** | how long the request took to fulfill, excluding round trip to the client. | [optional] 
 
 ## Example
 

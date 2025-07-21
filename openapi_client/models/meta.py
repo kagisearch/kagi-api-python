@@ -3,7 +3,7 @@
 """
     Kagi API
 
-    The Kagi API provides programmatic access to data that powers our search results & more.   Quick start for all APIs:  - Create an account at [Kagi](https://kagi.com/signup) - Generate an [API key](https://kagi.com/settings?p=api) - Call the API  We have the following APIs available. ### Commercial  - Kagi Search API (invite only at the moment) - Web and News Enrichment API (public, exposes Kagi's own indexes Teclis and TinyGem) - Universal Summarizer API (public) - FastGPT API (public)  ### Free  - Kagi Small Web RSS feed (public)  ### Official Client Libraries  We offer the following libraries you can use to interact with the Kagi API. These are generated from an OpenAPI spec. If you have a language you would like to use and it's not in the list, send us a message and we will add it to the list if it is supported. Or you can use the [spec](https://wild-wombat.redocly.app/_spec/openapi.yaml?download) to build your own custom library.  - [Golang](https://github.com/kagisearch/kagi-api-golang) - [Python](https://github.com/kagisearch/kagi-api-python)  ### Unofficial Client Libraries  There also exist third party libraries for interacting with the Kagi API.  - [kagigo for Go](https://github.com/httpjamesm/kagigo) - FastGPT & Universal Summarizer - [kagi-api](https://crates.io/crates/kagi-api) for Rust - [kagi-api](https://alchemists.io/projects/kagi-api) for Ruby - [kagi-dotnet](https://github.com/patchoulish/kagi-dotnet) for C#/.NET  ### API Status  Our existing API, the \"v0\" beta API, is being replaced with a new version that will be available publicly soon. As changes are made, we will be updating the documentation below when the new features become available.  See the [Support and Community](https://help.kagi.com/kagi/support-and-community/) section for details. ### Pricing  We are in the process of moving all APIs to a post-paid tiered system, where each tier has a limit on the number of requests that can be made. If an API has a pricing section, then it is still being migrated over to the new billing system.  ### GitHub Discussions  This is the preferred venue for bug reports and feature requests.  - [Bug Reports](https://github.com/kagisearch/kagi-docs/issues/new/choose) - [Q&A Forum](https://github.com/kagisearch/kagi-docs/discussions/categories/q-a?discussions_q=category%3AQ%26A+label%3Aproduct%3Akagi_search_api) - [API Feature Requests](https://github.com/kagisearch/kagi-docs/discussions/categories/kagi-search-api-feature-requests-ideas)  ### Discord Join our [Discord](https://kagi.com/discord)! Good for quick questions or chatting about things you've made with our APIs! 
+    The Kagi API provides programmatic access to data that powers our search results & more.   Quick start for all APIs:  - Create an account at [Kagi](https://kagi.com/signup) - Generate an [API key](https://kagi.com/settings?p=api) - Call the API  We have the following APIs available. ### Commercial  - Kagi Search API (invite only at the moment) - Web and News Enrichment API (public, exposes Kagi's own indexes Teclis and TinyGem) - Universal Summarizer API (public) - FastGPT API (public)  ### Free  - Kagi Small Web RSS feed (public)  ### Official Client Libraries  We offer the following libraries you can use to interact with the Kagi API. These are generated from an OpenAPI spec. If you have a language you would like to use and it's not in the list, send us a message and we will add it to the list if it is supported. Or you can use the [spec](https://wild-wombat.redocly.app/_spec/openapi.yaml?download) to build your own custom library.  - [Golang](https://github.com/kagisearch/kagi-api-golang) - [Python](https://github.com/kagisearch/kagi-api-python) - [Rust](https://github.com/kagisearch/kagi-api-rust)  ### Unofficial Client Libraries  There also exist third party libraries for interacting with the Kagi API.  - [kagigo for Go](https://github.com/httpjamesm/kagigo) - FastGPT & Universal Summarizer - [kagi-api](https://crates.io/crates/kagi-api) for Rust - [kagi-api](https://alchemists.io/projects/kagi-api) for Ruby - [kagi-dotnet](https://github.com/patchoulish/kagi-dotnet) for C#/.NET  ### API Status  Our existing API, the \"v0\" beta API, is being replaced with a new version that will be available publicly soon. As changes are made, we will be updating the documentation below when the new features become available.  See the [Support and Community](https://help.kagi.com/kagi/support-and-community/) section for details. ### Pricing  We are in the process of moving all APIs to a post-paid tiered system, where each tier has a limit on the number of requests that can be made. If an API has a pricing section, then it is still being migrated over to the new billing system.  ### GitHub Discussions  This is the preferred venue for bug reports and feature requests.  - [Bug Reports](https://github.com/kagisearch/kagi-docs/issues/new/choose) - [Q&A Forum](https://github.com/kagisearch/kagi-docs/discussions/categories/q-a?discussions_q=category%3AQ%26A+label%3Aproduct%3Akagi_search_api) - [API Feature Requests](https://github.com/kagisearch/kagi-docs/discussions/categories/kagi-search-api-feature-requests-ideas)  ### Discord Join our [Discord](https://kagi.com/discord)! Good for quick questions or chatting about things you've made with our APIs! 
 
     The version of the OpenAPI document: 0.1.0
     Contact: support@kagi.com
@@ -18,22 +18,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.meta_query import MetaQuery
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Meta(BaseModel):
     """
-    Meta
+    This object is subject to change as it is provided for debugging purposes. Fields may be added or removed as required. Don't build any hard dependancies on any of this data.
     """ # noqa: E501
-    trace: Optional[StrictStr] = None
+    trace: Optional[StrictStr] = Field(default=None, description="Trace ID that can be used to debug individual API requests. Provide this, if needed, when contacting Kagi support.")
     id: Optional[StrictStr] = None
-    node: Optional[StrictStr] = None
-    ms: Optional[StrictInt] = None
-    query: Optional[MetaQuery] = None
-    __properties: ClassVar[List[str]] = ["trace", "id", "node", "ms", "query"]
+    node: Optional[StrictStr] = Field(default=None, description="The hostname of the node that fulfilled the request.")
+    ms: Optional[StrictInt] = Field(default=None, description="how long the request took to fulfill, excluding round trip to the client.")
+    additional_properties: Dict[str, Any] = {}
+    __properties: ClassVar[List[str]] = ["trace", "id", "node", "ms"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -65,8 +64,10 @@ class Meta(BaseModel):
         * `None` is only added to the output dict for nullable fields that
           were set at model initialization. Other fields with value `None`
           are ignored.
+        * Fields in `self.additional_properties` are added to the output dict.
         """
         excluded_fields: Set[str] = set([
+            "additional_properties",
         ])
 
         _dict = self.model_dump(
@@ -74,9 +75,11 @@ class Meta(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of query
-        if self.query:
-            _dict['query'] = self.query.to_dict()
+        # puts key-value pairs in additional_properties in the top level
+        if self.additional_properties is not None:
+            for _key, _value in self.additional_properties.items():
+                _dict[_key] = _value
+
         return _dict
 
     @classmethod
@@ -92,9 +95,13 @@ class Meta(BaseModel):
             "trace": obj.get("trace"),
             "id": obj.get("id"),
             "node": obj.get("node"),
-            "ms": obj.get("ms"),
-            "query": MetaQuery.from_dict(obj["query"]) if obj.get("query") is not None else None
+            "ms": obj.get("ms")
         })
+        # store additional fields in additional_properties
+        for _key in obj.keys():
+            if _key not in cls.__properties:
+                _obj.additional_properties[_key] = obj.get(_key)
+
         return _obj
 
 

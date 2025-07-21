@@ -1,13 +1,14 @@
 # SearchResultImage
 
+An image that goes with the main resource. This could be a thumbnail of a video resource, Or a main image on an html resource
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **str** |  | 
-**height** | **int** |  | [optional] 
-**width** | **int** |  | [optional] 
+**url** | **str** | This is a URL that links directly to the image that goes with the resources. | 
+**height** | **int** | The height of the image. | [optional] 
+**width** | **int** | The width of the image. | [optional] 
 
 ## Example
 
