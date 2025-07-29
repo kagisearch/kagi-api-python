@@ -19,31 +19,33 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from typing_extensions import Annotated
-from openapi_client.models.search_request_lens import SearchRequestLens
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class SearchRequest(BaseModel):
+class SearchRequestLens(BaseModel):
     """
-    Used to upload the search query
+    An inline description of a lens to apply to the search. Options supplied by the lens take pecedent over those supplied by the user in their search terms (e.g., `site:` operators), allowing you to restrict the scope of the search to return more relevant results in specific applications.
     """ # noqa: E501
-    query: StrictStr = Field(description="The search query to perform.")
-    workflow: Optional[StrictStr] = Field(default='search', description="Can be used to filter result output to a single category.")
-    lens_id: Optional[StrictStr] = Field(default=None, description="A lens ID, as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (`https://kagi.com/lenses/ID`), or the full URL.")
-    lens: Optional[SearchRequestLens] = None
-    timeout: Optional[Union[Annotated[float, Field(le=4, strict=True, ge=0.5)], Annotated[int, Field(le=4, strict=True, ge=1)]]] = Field(default=None, description="Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi.")
-    __properties: ClassVar[List[str]] = ["query", "workflow", "lens_id", "lens", "timeout"]
+    sites_included: Optional[List[StrictStr]] = Field(default=None, description="A list of domains to restrict the search to.")
+    sites_excluded: Optional[List[StrictStr]] = Field(default=None, description="A list of domains to restrict the search to.")
+    keywords_included: Optional[List[StrictStr]] = Field(default=None, description="A list of keywords to filter results on, such that every result *must* contain these terms.")
+    keywords_excluded: Optional[List[StrictStr]] = Field(default=None, description="A list of keywords to filter results on, such that any result containing these terms is removed.")
+    file_type: Optional[StrictStr] = Field(default=None, description="A specific file type to search for. (e.g., `pdf`)")
+    time_after: Optional[StrictStr] = Field(default=None, description="Filters for web pages that have been updated or published *after* the given date (`YYYY-MM-DD`).")
+    time_before: Optional[StrictStr] = Field(default=None, description="Filters for web pages that have been updated or published *before* the given date (`YYYY-MM-DD`).")
+    time_relative: Optional[StrictStr] = Field(default=None, description="Filters for web pages that have been updated or published in the given interval, relative to today's date.")
+    search_region: Optional[StrictStr] = Field(default=None, description="Requests results localized to a specific region. Can be any valid [ISO-3166-1 Alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements), or the special value `no_region`, that will try to get the most general results possible.")
+    __properties: ClassVar[List[str]] = ["sites_included", "sites_excluded", "keywords_included", "keywords_excluded", "file_type", "time_after", "time_before", "time_relative", "search_region"]
 
-    @field_validator('workflow')
-    def workflow_validate_enum(cls, value):
+    @field_validator('time_relative')
+    def time_relative_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['search', 'images', 'videos', 'news', 'podcasts']):
-            raise ValueError("must be one of enum values ('search', 'images', 'videos', 'news', 'podcasts')")
+        if value not in set(['day', 'week', 'month']):
+            raise ValueError("must be one of enum values ('day', 'week', 'month')")
         return value
 
     model_config = ConfigDict(
@@ -64,7 +66,7 @@ class SearchRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of SearchRequest from a JSON string"""
+        """Create an instance of SearchRequestLens from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -85,14 +87,11 @@ class SearchRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of lens
-        if self.lens:
-            _dict['lens'] = self.lens.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of SearchRequest from a dict"""
+        """Create an instance of SearchRequestLens from a dict"""
         if obj is None:
             return None
 
@@ -100,11 +99,15 @@ class SearchRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "query": obj.get("query"),
-            "workflow": obj.get("workflow") if obj.get("workflow") is not None else 'search',
-            "lens_id": obj.get("lens_id"),
-            "lens": SearchRequestLens.from_dict(obj["lens"]) if obj.get("lens") is not None else None,
-            "timeout": obj.get("timeout")
+            "sites_included": obj.get("sites_included"),
+            "sites_excluded": obj.get("sites_excluded"),
+            "keywords_included": obj.get("keywords_included"),
+            "keywords_excluded": obj.get("keywords_excluded"),
+            "file_type": obj.get("file_type"),
+            "time_after": obj.get("time_after"),
+            "time_before": obj.get("time_before"),
+            "time_relative": obj.get("time_relative"),
+            "search_region": obj.get("search_region")
         })
         return _obj
 

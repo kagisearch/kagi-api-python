@@ -28,6 +28,7 @@ from openapi_client.models.search_object import SearchObject
 from openapi_client.models.search_object_image import SearchObjectImage
 from openapi_client.models.search_object_thumbnail import SearchObjectThumbnail
 from openapi_client.models.search_request import SearchRequest
+from openapi_client.models.search_request_lens import SearchRequestLens
 from openapi_client.models.search_result import SearchResult
 from openapi_client.models.search_result_image import SearchResultImage
 from openapi_client.models.summary import Summary

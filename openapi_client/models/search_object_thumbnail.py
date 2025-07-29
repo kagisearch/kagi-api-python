@@ -13,62 +13,80 @@
 """  # noqa: E501
 
 
-import unittest
+from __future__ import annotations
+import pprint
+import re  # noqa: F401
+import json
 
-from openapi_client.models.search_request import SearchRequest
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
-class TestSearchRequest(unittest.TestCase):
-    """SearchRequest unit test stubs"""
+class SearchObjectThumbnail(BaseModel):
+    """
+    A small image that can be displayed along side the serach result.
+    """ # noqa: E501
+    url: StrictStr = Field(description="URL of the thumbnail")
+    height: Optional[StrictInt] = Field(default=None, description="hight of the thumbnail")
+    width: Optional[StrictInt] = Field(default=None, description="width of the thumbnail")
+    __properties: ClassVar[List[str]] = ["url", "height", "width"]
 
-    def setUp(self):
-        pass
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
-    def tearDown(self):
-        pass
 
-    def make_instance(self, include_optional) -> SearchRequest:
-        """Test SearchRequest
-            include_optional is a boolean, when False only required
-            params are included, when True both required and
-            optional params are included """
-        # uncomment below to create an instance of `SearchRequest`
+    def to_str(self) -> str:
+        """Returns the string representation of the model using alias"""
+        return pprint.pformat(self.model_dump(by_alias=True))
+
+    def to_json(self) -> str:
+        """Returns the JSON representation of the model using alias"""
+        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
+        return json.dumps(self.to_dict())
+
+    @classmethod
+    def from_json(cls, json_str: str) -> Optional[Self]:
+        """Create an instance of SearchObjectThumbnail from a JSON string"""
+        return cls.from_dict(json.loads(json_str))
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Return the dictionary representation of the model using alias.
+
+        This has the following differences from calling pydantic's
+        `self.model_dump(by_alias=True)`:
+
+        * `None` is only added to the output dict for nullable fields that
+          were set at model initialization. Other fields with value `None`
+          are ignored.
         """
-        model = SearchRequest()
-        if include_optional:
-            return SearchRequest(
-                query = '',
-                workflow = 'search',
-                lens_id = '',
-                lens = openapi_client.models.search_request_lens.search_request_lens(
-                    sites_included = [
-                        ''
-                        ], 
-                    sites_excluded = [
-                        ''
-                        ], 
-                    keywords_included = [
-                        ''
-                        ], 
-                    keywords_excluded = [
-                        ''
-                        ], 
-                    file_type = '', 
-                    time_after = '', 
-                    time_before = '', 
-                    time_relative = 'day', 
-                    search_region = '', ),
-                timeout = 0.5
-            )
-        else:
-            return SearchRequest(
-                query = '',
+        excluded_fields: Set[str] = set([
+        ])
+
+        _dict = self.model_dump(
+            by_alias=True,
+            exclude=excluded_fields,
+            exclude_none=True,
         )
-        """
+        return _dict
 
-    def testSearchRequest(self):
-        """Test SearchRequest"""
-        # inst_req_only = self.make_instance(include_optional=False)
-        # inst_req_and_optional = self.make_instance(include_optional=True)
+    @classmethod
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+        """Create an instance of SearchObjectThumbnail from a dict"""
+        if obj is None:
+            return None
 
-if __name__ == '__main__':
-    unittest.main()
+        if not isinstance(obj, dict):
+            return cls.model_validate(obj)
+
+        _obj = cls.model_validate({
+            "url": obj.get("url"),
+            "height": obj.get("height"),
+            "width": obj.get("width")
+        })
+        return _obj
+
+

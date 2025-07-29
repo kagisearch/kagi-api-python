@@ -15,10 +15,10 @@
 
 import unittest
 
-from openapi_client.models.search_request import SearchRequest
+from openapi_client.models.search_object_image import SearchObjectImage
 
-class TestSearchRequest(unittest.TestCase):
-    """SearchRequest unit test stubs"""
+class TestSearchObjectImage(unittest.TestCase):
+    """SearchObjectImage unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,47 +26,28 @@ class TestSearchRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SearchRequest:
-        """Test SearchRequest
+    def make_instance(self, include_optional) -> SearchObjectImage:
+        """Test SearchObjectImage
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SearchRequest`
+        # uncomment below to create an instance of `SearchObjectImage`
         """
-        model = SearchRequest()
+        model = SearchObjectImage()
         if include_optional:
-            return SearchRequest(
-                query = '',
-                workflow = 'search',
-                lens_id = '',
-                lens = openapi_client.models.search_request_lens.search_request_lens(
-                    sites_included = [
-                        ''
-                        ], 
-                    sites_excluded = [
-                        ''
-                        ], 
-                    keywords_included = [
-                        ''
-                        ], 
-                    keywords_excluded = [
-                        ''
-                        ], 
-                    file_type = '', 
-                    time_after = '', 
-                    time_before = '', 
-                    time_relative = 'day', 
-                    search_region = '', ),
-                timeout = 0.5
+            return SearchObjectImage(
+                url = '',
+                height = 56,
+                width = 56
             )
         else:
-            return SearchRequest(
-                query = '',
+            return SearchObjectImage(
+                url = '',
         )
         """
 
-    def testSearchRequest(self):
-        """Test SearchRequest"""
+    def testSearchObjectImage(self):
+        """Test SearchObjectImage"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
