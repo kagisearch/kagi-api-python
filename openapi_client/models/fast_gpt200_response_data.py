@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from openapi_client.models.search_object import SearchObject
 from typing import Optional, Set
@@ -26,11 +26,11 @@ from typing_extensions import Self
 
 class FastGPT200ResponseData(BaseModel):
     """
-    FastGPT200ResponseData
+    The response object which contains the output and token count for the query.
     """ # noqa: E501
-    output: Optional[StrictStr] = None
-    tokens: Optional[StrictInt] = None
-    references: Optional[List[SearchObject]] = None
+    output: Optional[StrictStr] = Field(default=None, description="The actual response to the query.")
+    tokens: Optional[StrictInt] = Field(default=None, description="How many tokens were used to generate the response.")
+    references: Optional[List[SearchObject]] = Field(default=None, description="A collection of search results that are related to the query.")
     __properties: ClassVar[List[str]] = ["output", "tokens", "references"]
 
     model_config = ConfigDict(

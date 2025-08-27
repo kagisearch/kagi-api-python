@@ -1,13 +1,14 @@
 # FastGPT200ResponseData
 
+The response object which contains the output and token count for the query.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**output** | **str** |  | [optional] 
-**tokens** | **int** |  | [optional] 
-**references** | [**List[SearchObject]**](SearchObject.md) |  | [optional] 
+**output** | **str** | The actual response to the query. | [optional] 
+**tokens** | **int** | How many tokens were used to generate the response. | [optional] 
+**references** | [**List[SearchObject]**](SearchObject.md) | A collection of search results that are related to the query. | [optional] 
 
 ## Example
 

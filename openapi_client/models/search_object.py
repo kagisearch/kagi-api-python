@@ -31,8 +31,8 @@ class SearchObject(BaseModel):
     """ # noqa: E501
     t: Optional[StrictInt] = Field(default=None, description="This is always set to 0. It is used as a flag to identify if the result was a rearch result or a related searches object.")
     rank: Optional[StrictInt] = Field(default=None, description="Order of resarch results, the highest rank is 1 and should identify results that match the search request better.")
-    url: StrictStr = Field(description="URL of the resource identified in the search result.")
-    title: StrictStr = Field(description="Title of the search result. This can be taken from the title of the html document, or the title of a media resource.")
+    url: Optional[StrictStr] = Field(default=None, description="URL of the resource identified in the search result.")
+    title: Optional[StrictStr] = Field(default=None, description="Title of the search result. This can be taken from the title of the html document, or the title of a media resource.")
     snippet: Optional[StrictStr] = Field(default=None, description="a short desciption, or summary, of the content.")
     published: Optional[StrictStr] = Field(default=None, description="the date the rearch result was created")
     thumbnail: Optional[SearchObjectThumbnail] = None

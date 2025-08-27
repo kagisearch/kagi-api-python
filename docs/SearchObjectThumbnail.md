@@ -6,7 +6,7 @@ A small image that can be displayed along side the serach result.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **str** | URL of the thumbnail | 
+**url** | **str** | URL of the thumbnail | [optional] 
 **height** | **int** | hight of the thumbnail | [optional] 
 **width** | **int** | width of the thumbnail | [optional] 
 

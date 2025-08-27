@@ -27,7 +27,7 @@ class SearchObjectImage(BaseModel):
     """
     An image that is linked to the search result.
     """ # noqa: E501
-    url: StrictStr = Field(description="URL of the image")
+    url: Optional[StrictStr] = Field(default=None, description="URL of the image")
     height: Optional[StrictInt] = Field(default=None, description="hight of the image")
     width: Optional[StrictInt] = Field(default=None, description="width of the image")
     __properties: ClassVar[List[str]] = ["url", "height", "width"]

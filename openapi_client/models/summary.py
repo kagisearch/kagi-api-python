@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from openapi_client.models.meta import Meta
 from openapi_client.models.summary_data import SummaryData
 from typing import Optional, Set
@@ -27,10 +27,10 @@ from typing_extensions import Self
 
 class Summary(BaseModel):
     """
-    A summary of the text or url provided
+    A response to the summarize request. Contains both a metadata section that contains information about the response, and a data section that contains the actual summary.
     """ # noqa: E501
-    meta: Meta
-    data: SummaryData
+    meta: Optional[Meta] = None
+    data: Optional[SummaryData] = None
     __properties: ClassVar[List[str]] = ["meta", "data"]
 
     model_config = ConfigDict(

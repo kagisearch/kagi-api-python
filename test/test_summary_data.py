@@ -41,8 +41,6 @@ class TestSummaryData(unittest.TestCase):
             )
         else:
             return SummaryData(
-                output = '',
-                tokens = 56,
         )
         """
 

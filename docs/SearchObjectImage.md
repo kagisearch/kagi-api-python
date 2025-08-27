@@ -6,7 +6,7 @@ An image that is linked to the search result.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **str** | URL of the image | 
+**url** | **str** | URL of the image | [optional] 
 **height** | **int** | hight of the image | [optional] 
 **width** | **int** | width of the image | [optional] 
 

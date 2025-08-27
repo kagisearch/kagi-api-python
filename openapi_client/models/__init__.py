@@ -14,7 +14,69 @@
 """  # noqa: E501
 
 
-# import models into model package
+if __import__("typing").TYPE_CHECKING:
+    # import models into model package
+    from openapi_client.models.enrich_search200_response import EnrichSearch200Response
+    from openapi_client.models.example_error import ExampleError
+    from openapi_client.models.example_error_error import ExampleErrorError
+    from openapi_client.models.fast_gpt200_response import FastGPT200Response
+    from openapi_client.models.fast_gpt200_response_data import FastGPT200ResponseData
+    from openapi_client.models.fast_gpt_request import FastGPTRequest
+    from openapi_client.models.meta import Meta
+    from openapi_client.models.search200_response import Search200Response
+    from openapi_client.models.search200_response_data import Search200ResponseData
+    from openapi_client.models.search_object import SearchObject
+    from openapi_client.models.search_object_image import SearchObjectImage
+    from openapi_client.models.search_object_thumbnail import SearchObjectThumbnail
+    from openapi_client.models.search_request import SearchRequest
+    from openapi_client.models.search_request_lens import SearchRequestLens
+    from openapi_client.models.search_result import SearchResult
+    from openapi_client.models.search_result_image import SearchResultImage
+    from openapi_client.models.summary import Summary
+    from openapi_client.models.summary_data import SummaryData
+    from openapi_client.models.translate200_response import Translate200Response
+    from openapi_client.models.translate200_response_one_of import Translate200ResponseOneOf
+    from openapi_client.models.translate200_response_one_of1 import Translate200ResponseOneOf1
+    from openapi_client.models.translate200_response_one_of_definition import Translate200ResponseOneOfDefinition
+    from openapi_client.models.translate200_response_one_of_definition_definitions_inner import Translate200ResponseOneOfDefinitionDefinitionsInner
+    from openapi_client.models.translate200_response_one_of_definition_definitions_inner_meanings_inner import Translate200ResponseOneOfDefinitionDefinitionsInnerMeaningsInner
+    from openapi_client.models.translate200_response_one_of_detected_language import Translate200ResponseOneOfDetectedLanguage
+    from openapi_client.models.translate400_response import Translate400Response
+    from openapi_client.models.translate500_response import Translate500Response
+    from openapi_client.models.translate_alternatives200_response import TranslateAlternatives200Response
+    from openapi_client.models.translate_alternatives200_response_elements_inner import TranslateAlternatives200ResponseElementsInner
+    from openapi_client.models.translate_alternatives401_response import TranslateAlternatives401Response
+    from openapi_client.models.translate_alternatives402_response import TranslateAlternatives402Response
+    from openapi_client.models.translate_alternatives500_response import TranslateAlternatives500Response
+    from openapi_client.models.translate_detect200_response import TranslateDetect200Response
+    from openapi_client.models.translate_detect400_response import TranslateDetect400Response
+    from openapi_client.models.translate_detect_request import TranslateDetectRequest
+    from openapi_client.models.translate_dictionary200_response import TranslateDictionary200Response
+    from openapi_client.models.translate_dictionary200_response_definition import TranslateDictionary200ResponseDefinition
+    from openapi_client.models.translate_dictionary200_response_definition_primary_meaning import TranslateDictionary200ResponseDefinitionPrimaryMeaning
+    from openapi_client.models.translate_dictionary200_response_definition_secondary_meanings_inner import TranslateDictionary200ResponseDefinitionSecondaryMeaningsInner
+    from openapi_client.models.translate_dictionary200_response_language import TranslateDictionary200ResponseLanguage
+    from openapi_client.models.translate_dictionary400_response import TranslateDictionary400Response
+    from openapi_client.models.translate_dictionary500_response import TranslateDictionary500Response
+    from openapi_client.models.translate_dictionary_request import TranslateDictionaryRequest
+    from openapi_client.models.translate_list_languages200_response_inner import TranslateListLanguages200ResponseInner
+    from openapi_client.models.translate_request import TranslateRequest
+    from openapi_client.models.translate_request_text import TranslateRequestText
+    from openapi_client.models.translate_romanize200_response import TranslateRomanize200Response
+    from openapi_client.models.translate_word_insights200_response import TranslateWordInsights200Response
+    from openapi_client.models.translate_word_insights200_response_insights_inner import TranslateWordInsights200ResponseInsightsInner
+    from openapi_client.models.translate_word_insights200_response_insights_inner_variations_inner import TranslateWordInsights200ResponseInsightsInnerVariationsInner
+    from openapi_client.models.translate_word_insights400_response import TranslateWordInsights400Response
+    from openapi_client.models.translate_word_insights500_response import TranslateWordInsights500Response
+    from openapi_client.models.upload_text import UploadText
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            """# import models into model package
 from openapi_client.models.enrich_search200_response import EnrichSearch200Response
 from openapi_client.models.example_error import ExampleError
 from openapi_client.models.example_error_error import ExampleErrorError
@@ -68,3 +130,9 @@ from openapi_client.models.translate_word_insights200_response_insights_inner_va
 from openapi_client.models.translate_word_insights400_response import TranslateWordInsights400Response
 from openapi_client.models.translate_word_insights500_response import TranslateWordInsights500Response
 from openapi_client.models.upload_text import UploadText
+
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )

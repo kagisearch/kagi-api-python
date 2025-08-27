@@ -1,12 +1,13 @@
 # SummaryData
 
+The actual summary response.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**output** | **str** |  | 
-**tokens** | **int** |  | 
+**output** | **str** | Contains the summary text. | [optional] 
+**tokens** | **int** | A count of how many tokens were used to perform the summary. | [optional] 
 
 ## Example
 

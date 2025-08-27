@@ -53,8 +53,6 @@ class TestSearchObject(unittest.TestCase):
             )
         else:
             return SearchObject(
-                url = '',
-                title = '',
         )
         """
 

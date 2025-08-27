@@ -43,10 +43,6 @@ class TestSummary(unittest.TestCase):
             )
         else:
             return Summary(
-                meta = { },
-                data = openapi_client.models.summary_data.summary_data(
-                    output = '', 
-                    tokens = 56, ),
         )
         """
 

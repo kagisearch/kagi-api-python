@@ -43,7 +43,7 @@ class EnrichmentApi:
     def enrich_search(
         self,
         q: Annotated[StrictStr, Field(description="Query to enrich")],
-        type: Annotated[StrictStr, Field(description="Enrich with 'web' results or 'news' results")],
+        type: Annotated[StrictStr, Field(description="Enrich a search query with results pulled from Kagi indexes.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -62,7 +62,7 @@ class EnrichmentApi:
 
         :param q: Query to enrich (required)
         :type q: str
-        :param type: Enrich with 'web' results or 'news' results (required)
+        :param type: Enrich a search query with results pulled from Kagi indexes. (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -114,7 +114,7 @@ class EnrichmentApi:
     def enrich_search_with_http_info(
         self,
         q: Annotated[StrictStr, Field(description="Query to enrich")],
-        type: Annotated[StrictStr, Field(description="Enrich with 'web' results or 'news' results")],
+        type: Annotated[StrictStr, Field(description="Enrich a search query with results pulled from Kagi indexes.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -133,7 +133,7 @@ class EnrichmentApi:
 
         :param q: Query to enrich (required)
         :type q: str
-        :param type: Enrich with 'web' results or 'news' results (required)
+        :param type: Enrich a search query with results pulled from Kagi indexes. (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -185,7 +185,7 @@ class EnrichmentApi:
     def enrich_search_without_preload_content(
         self,
         q: Annotated[StrictStr, Field(description="Query to enrich")],
-        type: Annotated[StrictStr, Field(description="Enrich with 'web' results or 'news' results")],
+        type: Annotated[StrictStr, Field(description="Enrich a search query with results pulled from Kagi indexes.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -204,7 +204,7 @@ class EnrichmentApi:
 
         :param q: Query to enrich (required)
         :type q: str
-        :param type: Enrich with 'web' results or 'news' results (required)
+        :param type: Enrich a search query with results pulled from Kagi indexes. (required)
         :type type: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

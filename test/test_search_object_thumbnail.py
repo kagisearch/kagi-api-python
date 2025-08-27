@@ -42,7 +42,6 @@ class TestSearchObjectThumbnail(unittest.TestCase):
             )
         else:
             return SearchObjectThumbnail(
-                url = '',
         )
         """
 

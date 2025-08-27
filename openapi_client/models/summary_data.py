@@ -18,17 +18,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
 class SummaryData(BaseModel):
     """
-    SummaryData
+    The actual summary response.
     """ # noqa: E501
-    output: StrictStr
-    tokens: StrictInt
+    output: Optional[StrictStr] = Field(default=None, description="Contains the summary text.")
+    tokens: Optional[StrictInt] = Field(default=None, description="A count of how many tokens were used to perform the summary.")
     __properties: ClassVar[List[str]] = ["output", "tokens"]
 
     model_config = ConfigDict(

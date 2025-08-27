@@ -42,7 +42,6 @@ class TestSearchObjectImage(unittest.TestCase):
             )
         else:
             return SearchObjectImage(
-                url = '',
         )
         """
 

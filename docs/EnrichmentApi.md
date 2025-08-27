@@ -44,7 +44,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.EnrichmentApi(api_client)
     q = 'steve jobs' # str | Query to enrich
-    type = web # str | Enrich with 'web' results or 'news' results (default to web)
+    type = web # str | Enrich a search query with results pulled from Kagi indexes. (default to web)
 
     try:
         # Get enriched search results
@@ -63,7 +63,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **q** | **str**| Query to enrich | 
- **type** | **str**| Enrich with &#39;web&#39; results or &#39;news&#39; results | [default to web]
+ **type** | **str**| Enrich a search query with results pulled from Kagi indexes. | [default to web]
 
 ### Return type
 

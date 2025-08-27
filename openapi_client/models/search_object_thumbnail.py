@@ -27,7 +27,7 @@ class SearchObjectThumbnail(BaseModel):
     """
     A small image that can be displayed along side the serach result.
     """ # noqa: E501
-    url: StrictStr = Field(description="URL of the thumbnail")
+    url: Optional[StrictStr] = Field(default=None, description="URL of the thumbnail")
     height: Optional[StrictInt] = Field(default=None, description="hight of the thumbnail")
     width: Optional[StrictInt] = Field(default=None, description="width of the thumbnail")
     __properties: ClassVar[List[str]] = ["url", "height", "width"]

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **t** | **int** | This is always set to 0. It is used as a flag to identify if the result was a rearch result or a related searches object. | [optional] 
 **rank** | **int** | Order of resarch results, the highest rank is 1 and should identify results that match the search request better. | [optional] 
-**url** | **str** | URL of the resource identified in the search result. | 
-**title** | **str** | Title of the search result. This can be taken from the title of the html document, or the title of a media resource. | 
+**url** | **str** | URL of the resource identified in the search result. | [optional] 
+**title** | **str** | Title of the search result. This can be taken from the title of the html document, or the title of a media resource. | [optional] 
 **snippet** | **str** | a short desciption, or summary, of the content. | [optional] 
 **published** | **str** | the date the rearch result was created | [optional] 
 **thumbnail** | [**SearchObjectThumbnail**](SearchObjectThumbnail.md) |  | [optional] 
