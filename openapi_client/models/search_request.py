@@ -21,9 +21,13 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
+from openapi_client.models.search_request_extract import SearchRequestExtract
+from openapi_client.models.search_request_filters import SearchRequestFilters
 from openapi_client.models.search_request_lens import SearchRequestLens
+from openapi_client.models.search_request_personalizations import SearchRequestPersonalizations
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class SearchRequest(BaseModel):
     """
@@ -34,7 +38,12 @@ class SearchRequest(BaseModel):
     lens_id: Optional[StrictStr] = Field(default=None, description="A lens ID, as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (`https://kagi.com/lenses/ID`), or the full URL.")
     lens: Optional[SearchRequestLens] = None
     timeout: Optional[Union[Annotated[float, Field(le=4, strict=True, ge=0.5)], Annotated[int, Field(le=4, strict=True, ge=1)]]] = Field(default=None, description="Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi.")
-    __properties: ClassVar[List[str]] = ["query", "workflow", "lens_id", "lens", "timeout"]
+    page: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=None, description="Page number for paginated results. Must be between 1 and 10.")
+    limit: Optional[Annotated[int, Field(le=1024, strict=True, ge=1)]] = Field(default=None, description="Maximum number of results to return. Must be between 1 and 1024.")
+    filters: Optional[SearchRequestFilters] = None
+    extract: Optional[SearchRequestExtract] = None
+    personalizations: Optional[SearchRequestPersonalizations] = None
+    __properties: ClassVar[List[str]] = ["query", "workflow", "lens_id", "lens", "timeout", "page", "limit", "filters", "extract", "personalizations"]
 
     @field_validator('workflow')
     def workflow_validate_enum(cls, value):
@@ -47,7 +56,8 @@ class SearchRequest(BaseModel):
         return value
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -59,8 +69,7 @@ class SearchRequest(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
@@ -88,6 +97,15 @@ class SearchRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of lens
         if self.lens:
             _dict['lens'] = self.lens.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of filters
+        if self.filters:
+            _dict['filters'] = self.filters.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of extract
+        if self.extract:
+            _dict['extract'] = self.extract.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of personalizations
+        if self.personalizations:
+            _dict['personalizations'] = self.personalizations.to_dict()
         return _dict
 
     @classmethod
@@ -104,7 +122,12 @@ class SearchRequest(BaseModel):
             "workflow": obj.get("workflow") if obj.get("workflow") is not None else 'search',
             "lens_id": obj.get("lens_id"),
             "lens": SearchRequestLens.from_dict(obj["lens"]) if obj.get("lens") is not None else None,
-            "timeout": obj.get("timeout")
+            "timeout": obj.get("timeout"),
+            "page": obj.get("page"),
+            "limit": obj.get("limit"),
+            "filters": SearchRequestFilters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
+            "extract": SearchRequestExtract.from_dict(obj["extract"]) if obj.get("extract") is not None else None,
+            "personalizations": SearchRequestPersonalizations.from_dict(obj["personalizations"]) if obj.get("personalizations") is not None else None
         })
         return _obj
 

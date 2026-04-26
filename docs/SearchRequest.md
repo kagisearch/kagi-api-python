@@ -11,6 +11,11 @@ Name | Type | Description | Notes
 **lens_id** | **str** | A lens ID, as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (&#x60;https://kagi.com/lenses/ID&#x60;), or the full URL. | [optional] 
 **lens** | [**SearchRequestLens**](SearchRequestLens.md) |  | [optional] 
 **timeout** | **float** | Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi. | [optional] 
+**page** | **int** | Page number for paginated results. Must be between 1 and 10. | [optional] 
+**limit** | **int** | Maximum number of results to return. Must be between 1 and 1024. | [optional] 
+**filters** | [**SearchRequestFilters**](SearchRequestFilters.md) |  | [optional] 
+**extract** | [**SearchRequestExtract**](SearchRequestExtract.md) |  | [optional] 
+**personalizations** | [**SearchRequestPersonalizations**](SearchRequestPersonalizations.md) |  | [optional] 
 
 ## Example
 

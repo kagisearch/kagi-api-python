@@ -57,7 +57,27 @@ class TestSearchRequest(unittest.TestCase):
                     time_before = '', 
                     time_relative = 'day', 
                     search_region = '', ),
-                timeout = 0.5
+                timeout = 0.5,
+                page = 1,
+                limit = 1,
+                filters = openapi_client.models.search_request_filters.search_request_filters(
+                    region = '', 
+                    after = '', 
+                    before = '', ),
+                extract = openapi_client.models.search_request_extract.search_request_extract(
+                    count = 1, 
+                    timeout = 0.5, ),
+                personalizations = openapi_client.models.search_request_personalizations.search_request_personalizations(
+                    domains = [
+                        openapi_client.models.search_request_personalizations_domains_inner.search_request_personalizations_domains_inner(
+                            domain = '', 
+                            bias = 1.337, )
+                        ], 
+                    regexes = [
+                        openapi_client.models.search_request_personalizations_regexes_inner.search_request_personalizations_regexes_inner(
+                            regex = '', 
+                            replacement = '', )
+                        ], )
             )
         else:
             return SearchRequest(
