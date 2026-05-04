@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import date
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -28,9 +29,9 @@ class SearchRequestFilters(BaseModel):
     """
     Filters to apply to search results for more targeted queries.
     """ # noqa: E501
-    region: Optional[StrictStr] = Field(default=None, description="Filter results to a specific region using an ISO-3166-1 Alpha-2 country code. See https://help.kagi.com/api/regions for supported codes.")
-    after: Optional[StrictStr] = Field(default=None, description="Filter for results published/updated after this date. Must be in ISO 8601 format (YYYY-MM-DD).")
-    before: Optional[StrictStr] = Field(default=None, description="Filter for results published/updated before this date. Must be in ISO 8601 format (YYYY-MM-DD).")
+    region: Optional[StrictStr] = Field(default=None, description="Filter results to a specific region using an ISO 3166-1 Alpha-2 country code. See https://help.kagi.com/api/regions for supported codes.")
+    after: Optional[date] = Field(default=None, description="Filter for results published or updated after this date.")
+    before: Optional[date] = Field(default=None, description="Filter for results published or updated before this date.")
     __properties: ClassVar[List[str]] = ["region", "after", "before"]
 
     model_config = ConfigDict(

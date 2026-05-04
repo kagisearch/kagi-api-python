@@ -18,6 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import date
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -26,15 +27,15 @@ from pydantic_core import to_jsonable_python
 
 class SearchRequestLens(BaseModel):
     """
-    An inline description of a lens to apply to the search. Options supplied by the lens take pecedent over those supplied by the user in their search terms (e.g., `site:` operators), allowing you to restrict the scope of the search to return more relevant results in specific applications.
+    Inline description of a lens to apply to the search. Options supplied by the lens take precedence over those supplied by the user in their search terms (e.g., `site:` operators), allowing you to restrict the scope of the search to return more relevant results in specific applications.
     """ # noqa: E501
-    sites_included: Optional[List[StrictStr]] = Field(default=None, description="A list of domains to restrict the search to.")
-    sites_excluded: Optional[List[StrictStr]] = Field(default=None, description="A list of domains to restrict the search to.")
-    keywords_included: Optional[List[StrictStr]] = Field(default=None, description="A list of keywords to filter results on, such that every result *must* contain these terms.")
-    keywords_excluded: Optional[List[StrictStr]] = Field(default=None, description="A list of keywords to filter results on, such that any result containing these terms is removed.")
+    sites_included: Optional[List[StrictStr]] = Field(default=None, description="Search only these domains.")
+    sites_excluded: Optional[List[StrictStr]] = Field(default=None, description="Exclude these domains from the search.")
+    keywords_included: Optional[List[StrictStr]] = Field(default=None, description="Return only results containing these keywords.")
+    keywords_excluded: Optional[List[StrictStr]] = Field(default=None, description="Exclude results containing these keywords.")
     file_type: Optional[StrictStr] = Field(default=None, description="A specific file type to search for. (e.g., `pdf`)")
-    time_after: Optional[StrictStr] = Field(default=None, description="Filters for web pages that have been updated or published *after* the given date (`YYYY-MM-DD`).")
-    time_before: Optional[StrictStr] = Field(default=None, description="Filters for web pages that have been updated or published *before* the given date (`YYYY-MM-DD`).")
+    time_after: Optional[date] = Field(default=None, description="Filters for web pages that have been updated or published *after* the given date.")
+    time_before: Optional[date] = Field(default=None, description="Filters for web pages that have been updated or published *before* the given date.")
     time_relative: Optional[StrictStr] = Field(default=None, description="Filters for web pages that have been updated or published in the given interval, relative to today's date.")
     search_region: Optional[StrictStr] = Field(default=None, description="Requests results localized to a specific region. Can be any valid [ISO-3166-1 Alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements), or the special value `no_region`, that will try to get the most general results possible.")
     __properties: ClassVar[List[str]] = ["sites_included", "sites_excluded", "keywords_included", "keywords_excluded", "file_type", "time_after", "time_before", "time_relative", "search_region"]

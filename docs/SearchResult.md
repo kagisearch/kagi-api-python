@@ -7,9 +7,9 @@ A search result that fulfills the query sent to the kagi API
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** | The location of the result. This is the direct URL to the resource that matches the query | 
-**title** | **str** | This is the title of the resource. For HTML resources, it is the title in the header of the document. For Video resources, it is the name of the video that would be displayed on the video site | 
+**title** | **str** | This is the title of the resource. For HTML documents, it reflects &#x60;&lt;title&gt;&#x60;. For videos, it is the name that would be displayed on the video site. | 
 **snippet** | **str** | A short summary of the contents of the resource | [optional] 
-**time** | **str** | A date for when the resource was last updated or created. | [optional] 
+**time** | **str** | The date when the resource was created or last updated. | [optional] 
 **image** | [**SearchResultImage**](SearchResultImage.md) |  | [optional] 
 **props** | **Dict[str, object]** | Holds arbitrary result metadata | [optional] 
 

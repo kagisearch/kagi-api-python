@@ -1,6 +1,6 @@
 # SearchResultImage
 
-An image that goes with the main resource. This could be a thumbnail of a video resource, Or a main image on an html resource
+An image that goes with the main resource. It could be a video's thumbnail or an HTML document's main image.
 
 ## Properties
 

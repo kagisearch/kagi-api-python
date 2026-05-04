@@ -33,9 +33,9 @@ class SearchRequest(BaseModel):
     """
     Used to upload the search query
     """ # noqa: E501
-    query: StrictStr = Field(description="The search query to perform.")
-    workflow: Optional[StrictStr] = Field(default='search', description="Can be used to filter result output to a single category.")
-    lens_id: Optional[StrictStr] = Field(default=None, description="A lens ID, as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (`https://kagi.com/lenses/ID`), or the full URL.")
+    query: StrictStr = Field(description="Search query to run.")
+    workflow: Optional[StrictStr] = Field(default='search', description="Type of results to return.")
+    lens_id: Optional[StrictStr] = Field(default=None, description="Lens to apply to the search. Can be a built-in lens's identifier or a lens ID as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (`https://kagi.com/lenses/ID`) or the full URL.")
     lens: Optional[SearchRequestLens] = None
     timeout: Optional[Union[Annotated[float, Field(le=4, strict=True, ge=0.5)], Annotated[int, Field(le=4, strict=True, ge=1)]]] = Field(default=None, description="Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi.")
     page: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=None, description="Page number for paginated results. Must be between 1 and 10.")

@@ -37,8 +37,8 @@ class TestSearchRequestFilters(unittest.TestCase):
         if include_optional:
             return SearchRequestFilters(
                 region = '',
-                after = '',
-                before = ''
+                after = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                before = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date()
             )
         else:
             return SearchRequestFilters(

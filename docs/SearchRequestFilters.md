@@ -6,9 +6,9 @@ Filters to apply to search results for more targeted queries.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**region** | **str** | Filter results to a specific region using an ISO-3166-1 Alpha-2 country code. See https://help.kagi.com/api/regions for supported codes. | [optional] 
-**after** | **str** | Filter for results published/updated after this date. Must be in ISO 8601 format (YYYY-MM-DD). | [optional] 
-**before** | **str** | Filter for results published/updated before this date. Must be in ISO 8601 format (YYYY-MM-DD). | [optional] 
+**region** | **str** | Filter results to a specific region using an ISO 3166-1 Alpha-2 country code. See https://help.kagi.com/api/regions for supported codes. | [optional] 
+**after** | **date** | Filter for results published or updated after this date. | [optional] 
+**before** | **date** | Filter for results published or updated before this date. | [optional] 
 
 ## Example
 

@@ -30,9 +30,9 @@ class SearchResult(BaseModel):
     A search result that fulfills the query sent to the kagi API
     """ # noqa: E501
     url: StrictStr = Field(description="The location of the result. This is the direct URL to the resource that matches the query")
-    title: StrictStr = Field(description="This is the title of the resource. For HTML resources, it is the title in the header of the document. For Video resources, it is the name of the video that would be displayed on the video site")
+    title: StrictStr = Field(description="This is the title of the resource. For HTML documents, it reflects `<title>`. For videos, it is the name that would be displayed on the video site.")
     snippet: Optional[StrictStr] = Field(default=None, description="A short summary of the contents of the resource")
-    time: Optional[StrictStr] = Field(default=None, description="A date for when the resource was last updated or created.")
+    time: Optional[StrictStr] = Field(default=None, description="The date when the resource was created or last updated.")
     image: Optional[SearchResultImage] = None
     props: Optional[Dict[str, Any]] = Field(default=None, description="Holds arbitrary result metadata")
     __properties: ClassVar[List[str]] = ["url", "title", "snippet", "time", "image", "props"]

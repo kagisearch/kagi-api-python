@@ -30,7 +30,7 @@ class TestSearchApi(unittest.TestCase):
     def test_search(self) -> None:
         """Test case for search
 
-        Perform a search of the web.
+        Perform a web search
         """
         pass
 

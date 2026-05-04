@@ -16,8 +16,6 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field
-from typing_extensions import Annotated
 from openapi_client.models.search200_response import Search200Response
 from openapi_client.models.search_request import SearchRequest
 
@@ -42,7 +40,7 @@ class SearchApi:
     @validate_call
     def search(
         self,
-        search_request: Annotated[SearchRequest, Field(description="Contains the search query to run")],
+        search_request: SearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56,10 +54,10 @@ class SearchApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Search200Response:
-        """Perform a search of the web.
+        """Perform a web search
 
 
-        :param search_request: Contains the search query to run (required)
+        :param search_request: (required)
         :type search_request: SearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -113,7 +111,7 @@ class SearchApi:
     @validate_call
     def search_with_http_info(
         self,
-        search_request: Annotated[SearchRequest, Field(description="Contains the search query to run")],
+        search_request: SearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -127,10 +125,10 @@ class SearchApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Search200Response]:
-        """Perform a search of the web.
+        """Perform a web search
 
 
-        :param search_request: Contains the search query to run (required)
+        :param search_request: (required)
         :type search_request: SearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -184,7 +182,7 @@ class SearchApi:
     @validate_call
     def search_without_preload_content(
         self,
-        search_request: Annotated[SearchRequest, Field(description="Contains the search query to run")],
+        search_request: SearchRequest,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -198,10 +196,10 @@ class SearchApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Perform a search of the web.
+        """Perform a web search
 
 
-        :param search_request: Contains the search query to run (required)
+        :param search_request: (required)
         :type search_request: SearchRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

@@ -26,7 +26,7 @@ from pydantic_core import to_jsonable_python
 
 class SearchResultImage(BaseModel):
     """
-    An image that goes with the main resource. This could be a thumbnail of a video resource, Or a main image on an html resource
+    An image that goes with the main resource. It could be a video's thumbnail or an HTML document's main image.
     """ # noqa: E501
     url: StrictStr = Field(description="This is a URL that links directly to the image that goes with the resources.")
     height: Optional[StrictInt] = Field(default=None, description="The height of the image.")

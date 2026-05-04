@@ -4,13 +4,13 @@ All URIs are relative to *https://kagi.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**search**](SearchApi.md#search) | **POST** /search | Perform a search of the web.
+[**search**](SearchApi.md#search) | **POST** /search | Perform a web search
 
 
 # **search**
 > Search200Response search(search_request)
 
-Perform a search of the web.
+Perform a web search
 
 ### Example
 
@@ -43,10 +43,10 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.SearchApi(api_client)
-    search_request = {"query":"steve jobs","workflow":"search"} # SearchRequest | Contains the search query to run
+    search_request = {"query":"steve jobs","workflow":"search"} # SearchRequest | 
 
     try:
-        # Perform a search of the web.
+        # Perform a web search
         api_response = api_instance.search(search_request)
         print("The response of SearchApi->search:\n")
         pprint(api_response)
@@ -61,7 +61,7 @@ with openapi_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **search_request** | [**SearchRequest**](SearchRequest.md)| Contains the search query to run | 
+ **search_request** | [**SearchRequest**](SearchRequest.md)|  | 
 
 ### Return type
 

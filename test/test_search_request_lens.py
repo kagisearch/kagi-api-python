@@ -49,8 +49,8 @@ class TestSearchRequestLens(unittest.TestCase):
                     ''
                     ],
                 file_type = '',
-                time_after = '',
-                time_before = '',
+                time_after = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
+                time_before = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 time_relative = 'day',
                 search_region = ''
             )

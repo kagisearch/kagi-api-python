@@ -27,22 +27,22 @@ from pydantic_core import to_jsonable_python
 
 class Search200ResponseData(BaseModel):
     """
-    Holds all the search results for the query specified. As results have different types and sources, they are spearated into different fields within this object. For example image results are stored under `data.image` while news results are stored under `data.news`. All results will have the same main structure, but additional data might be stored under the `data.{name}[].props` path. Please look at each different type of result for more information about this.
+    Holds all the search results for the query specified. As results have different types and sources, they are separated into different fields within this object. For example image results are stored under `data.image` while news results are stored under `data.news`. All results will have the same main structure, but additional data might be stored under the `data.{name}[].props` path. Please look at each different type of result for more information about this.
     """ # noqa: E501
-    search: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for html pages or wedbsites.")
+    search: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for html pages or websites.")
     image: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for images.")
     video: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for videos.")
     podcast: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for podcasts.")
-    podcast_creator: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for creators of podcasta.")
+    podcast_creator: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for creators of podcasts.")
     news: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for news articles.")
     adjacent_question: Optional[List[SearchResult]] = Field(default=None, description="Contains results that are obtained by searching for slightly different queries. These questions are stored under the `props.question` path.")
     direct_answer: Optional[List[SearchResult]] = Field(default=None, description="If the search query was a math equation, or unit conversions, things that can be answered quickly, the result will be in here.")
-    interesting_news: Optional[List[SearchResult]] = Field(default=None, description="Contains news results from publishers collected and stored in Kagis' news index.")
-    interesting_finds: Optional[List[SearchResult]] = Field(default=None, description="Contains small web results from publishers collected and stored in Kagis' small web index.")
+    interesting_news: Optional[List[SearchResult]] = Field(default=None, description="Contains news results from publishers collected and stored in Kagi's news index.")
+    interesting_finds: Optional[List[SearchResult]] = Field(default=None, description="Contains small web results from publishers collected and stored in Kagi's small web index.")
     infobox: Optional[List[SearchResult]] = Field(default=None, description="Contains detailed summary and tabulated information about a person, place, or thing.")
     code: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results that link to code resources or repositories.")
     package_tracking: Optional[List[SearchResult]] = Field(default=None, description="If the search query was a package tracking number, the correct package tracking website should be present in this collection.")
-    public_records: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for public records, such as government documents, or public court records.")
+    public_records: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for public records, such as government documents or public court records.")
     weather: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results for the current weather.")
     related_search: Optional[List[SearchResult]] = Field(default=None, description="Contains a list of searches that are related to the current search, and may help narrow down the results.")
     listicle: Optional[List[SearchResult]] = Field(default=None, description="Contains all search results that are lists of things. Results with titles like \"5 things you didn't know about...\", or \"10 of the best headphones\".")
