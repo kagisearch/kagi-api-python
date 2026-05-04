@@ -20,6 +20,7 @@ __version__ = "1.0.0"
 # Define package exports
 __all__ = [
     "EnrichmentApi",
+    "ExtractApi",
     "FastGPTApi",
     "SearchApi",
     "SummarizerApi",
@@ -34,12 +35,16 @@ __all__ = [
     "ApiAttributeError",
     "ApiException",
     "EnrichSearch200Response",
-    "ExampleError",
-    "ExampleErrorError",
+    "ErrorDetail",
+    "ErrorEnvelope",
+    "ExtractRequest",
+    "ExtractResponse",
     "FastGPT200Response",
     "FastGPT200ResponseData",
     "FastGPTRequest",
     "Meta",
+    "PageInput",
+    "PageOutput",
     "Search200Response",
     "Search200ResponseData",
     "SearchObject",
@@ -95,6 +100,7 @@ __all__ = [
 
 # import apis into sdk package
 from openapi_client.api.enrichment_api import EnrichmentApi as EnrichmentApi
+from openapi_client.api.extract_api import ExtractApi as ExtractApi
 from openapi_client.api.fast_gpt_api import FastGPTApi as FastGPTApi
 from openapi_client.api.search_api import SearchApi as SearchApi
 from openapi_client.api.summarizer_api import SummarizerApi as SummarizerApi
@@ -113,12 +119,16 @@ from openapi_client.exceptions import ApiException as ApiException
 
 # import models into sdk package
 from openapi_client.models.enrich_search200_response import EnrichSearch200Response as EnrichSearch200Response
-from openapi_client.models.example_error import ExampleError as ExampleError
-from openapi_client.models.example_error_error import ExampleErrorError as ExampleErrorError
+from openapi_client.models.error_detail import ErrorDetail as ErrorDetail
+from openapi_client.models.error_envelope import ErrorEnvelope as ErrorEnvelope
+from openapi_client.models.extract_request import ExtractRequest as ExtractRequest
+from openapi_client.models.extract_response import ExtractResponse as ExtractResponse
 from openapi_client.models.fast_gpt200_response import FastGPT200Response as FastGPT200Response
 from openapi_client.models.fast_gpt200_response_data import FastGPT200ResponseData as FastGPT200ResponseData
 from openapi_client.models.fast_gpt_request import FastGPTRequest as FastGPTRequest
 from openapi_client.models.meta import Meta as Meta
+from openapi_client.models.page_input import PageInput as PageInput
+from openapi_client.models.page_output import PageOutput as PageOutput
 from openapi_client.models.search200_response import Search200Response as Search200Response
 from openapi_client.models.search200_response_data import Search200ResponseData as Search200ResponseData
 from openapi_client.models.search_object import SearchObject as SearchObject

@@ -1331,7 +1331,7 @@ class TranslateApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[TranslateListLanguages200ResponseInner]",
-            '401': "ExampleError",
+            '401': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1403,7 +1403,7 @@ class TranslateApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[TranslateListLanguages200ResponseInner]",
-            '401': "ExampleError",
+            '401': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1475,7 +1475,7 @@ class TranslateApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[TranslateListLanguages200ResponseInner]",
-            '401': "ExampleError",
+            '401': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,

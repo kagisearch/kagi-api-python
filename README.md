@@ -153,6 +153,7 @@ All URIs are relative to *https://kagi.com/api/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EnrichmentApi* | [**enrich_search**](docs/EnrichmentApi.md#enrich_search) | **GET** /enrich/{type} | Get enriched search results
+*ExtractApi* | [**extract_content**](docs/ExtractApi.md#extract_content) | **POST** /extract | Extract page content as markdown from URLs
 *FastGPTApi* | [**fast_gpt**](docs/FastGPTApi.md#fast_gpt) | **POST** /fastgpt | Answer a query.
 *SearchApi* | [**search**](docs/SearchApi.md#search) | **POST** /search | Perform a search of the web.
 *SummarizerApi* | [**summarize_text**](docs/SummarizerApi.md#summarize_text) | **POST** /summarize | Upload text to summarize.
@@ -169,12 +170,16 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [EnrichSearch200Response](docs/EnrichSearch200Response.md)
- - [ExampleError](docs/ExampleError.md)
- - [ExampleErrorError](docs/ExampleErrorError.md)
+ - [ErrorDetail](docs/ErrorDetail.md)
+ - [ErrorEnvelope](docs/ErrorEnvelope.md)
+ - [ExtractRequest](docs/ExtractRequest.md)
+ - [ExtractResponse](docs/ExtractResponse.md)
  - [FastGPT200Response](docs/FastGPT200Response.md)
  - [FastGPT200ResponseData](docs/FastGPT200ResponseData.md)
  - [FastGPTRequest](docs/FastGPTRequest.md)
  - [Meta](docs/Meta.md)
+ - [PageInput](docs/PageInput.md)
+ - [PageOutput](docs/PageOutput.md)
  - [Search200Response](docs/Search200Response.md)
  - [Search200ResponseData](docs/Search200ResponseData.md)
  - [SearchObject](docs/SearchObject.md)

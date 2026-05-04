@@ -93,7 +93,11 @@ class SearchApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Search200Response",
-            '401': "ExampleError",
+            '400': "ErrorEnvelope",
+            '401': "ErrorEnvelope",
+            '403': "ErrorEnvelope",
+            '429': "ErrorEnvelope",
+            '500': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -160,7 +164,11 @@ class SearchApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Search200Response",
-            '401': "ExampleError",
+            '400': "ErrorEnvelope",
+            '401': "ErrorEnvelope",
+            '403': "ErrorEnvelope",
+            '429': "ErrorEnvelope",
+            '500': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -227,7 +235,11 @@ class SearchApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "Search200Response",
-            '401': "ExampleError",
+            '400': "ErrorEnvelope",
+            '401': "ErrorEnvelope",
+            '403': "ErrorEnvelope",
+            '429': "ErrorEnvelope",
+            '500': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -94,7 +94,7 @@ class FastGPTApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FastGPT200Response",
-            '401': "ExampleError",
+            '401': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -162,7 +162,7 @@ class FastGPTApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FastGPT200Response",
-            '401': "ExampleError",
+            '401': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -230,7 +230,7 @@ class FastGPTApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "FastGPT200Response",
-            '401': "ExampleError",
+            '401': "ErrorEnvelope",
         }
         response_data = self.api_client.call_api(
             *_param,

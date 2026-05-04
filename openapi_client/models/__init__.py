@@ -15,12 +15,16 @@
 
 # import models into model package
 from openapi_client.models.enrich_search200_response import EnrichSearch200Response
-from openapi_client.models.example_error import ExampleError
-from openapi_client.models.example_error_error import ExampleErrorError
+from openapi_client.models.error_detail import ErrorDetail
+from openapi_client.models.error_envelope import ErrorEnvelope
+from openapi_client.models.extract_request import ExtractRequest
+from openapi_client.models.extract_response import ExtractResponse
 from openapi_client.models.fast_gpt200_response import FastGPT200Response
 from openapi_client.models.fast_gpt200_response_data import FastGPT200ResponseData
 from openapi_client.models.fast_gpt_request import FastGPTRequest
 from openapi_client.models.meta import Meta
+from openapi_client.models.page_input import PageInput
+from openapi_client.models.page_output import PageOutput
 from openapi_client.models.search200_response import Search200Response
 from openapi_client.models.search200_response_data import Search200ResponseData
 from openapi_client.models.search_object import SearchObject

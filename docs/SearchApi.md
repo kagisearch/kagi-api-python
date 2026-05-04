@@ -81,7 +81,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Invalid request parameters |  -  |
 **401** | Access token is missing or invalid |  -  |
+**403** | Forbidden - IP address not authorized |  -  |
+**429** | Rate limited or usage limit exhausted |  -  |
+**500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
