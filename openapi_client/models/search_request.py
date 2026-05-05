@@ -35,6 +35,7 @@ class SearchRequest(BaseModel):
     """ # noqa: E501
     query: StrictStr = Field(description="Search query to run.")
     workflow: Optional[StrictStr] = Field(default='search', description="Type of results to return.")
+    format: Optional[StrictStr] = Field(default='json', description="Format to serialize the API response as.")
     lens_id: Optional[StrictStr] = Field(default=None, description="Lens to apply to the search. Can be a built-in lens's identifier or a lens ID as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (`https://kagi.com/lenses/ID`) or the full URL.")
     lens: Optional[SearchRequestLens] = None
     timeout: Optional[Union[Annotated[float, Field(le=4, strict=True, ge=0.5)], Annotated[int, Field(le=4, strict=True, ge=1)]]] = Field(default=None, description="Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi.")
@@ -43,7 +44,7 @@ class SearchRequest(BaseModel):
     filters: Optional[SearchRequestFilters] = None
     extract: Optional[SearchRequestExtract] = None
     personalizations: Optional[SearchRequestPersonalizations] = None
-    __properties: ClassVar[List[str]] = ["query", "workflow", "lens_id", "lens", "timeout", "page", "limit", "filters", "extract", "personalizations"]
+    __properties: ClassVar[List[str]] = ["query", "workflow", "format", "lens_id", "lens", "timeout", "page", "limit", "filters", "extract", "personalizations"]
 
     @field_validator('workflow')
     def workflow_validate_enum(cls, value):
@@ -53,6 +54,16 @@ class SearchRequest(BaseModel):
 
         if value not in set(['search', 'images', 'videos', 'news', 'podcasts']):
             raise ValueError("must be one of enum values ('search', 'images', 'videos', 'news', 'podcasts')")
+        return value
+
+    @field_validator('format')
+    def format_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['json', 'markdown']):
+            raise ValueError("must be one of enum values ('json', 'markdown')")
         return value
 
     model_config = ConfigDict(
@@ -120,6 +131,7 @@ class SearchRequest(BaseModel):
         _obj = cls.model_validate({
             "query": obj.get("query"),
             "workflow": obj.get("workflow") if obj.get("workflow") is not None else 'search',
+            "format": obj.get("format") if obj.get("format") is not None else 'json',
             "lens_id": obj.get("lens_id"),
             "lens": SearchRequestLens.from_dict(obj["lens"]) if obj.get("lens") is not None else None,
             "timeout": obj.get("timeout"),

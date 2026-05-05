@@ -38,6 +38,7 @@ class TestSearchRequest(unittest.TestCase):
             return SearchRequest(
                 query = '',
                 workflow = 'search',
+                format = 'json',
                 lens_id = '',
                 lens = openapi_client.models.search_request_lens.search_request_lens(
                     sites_included = [

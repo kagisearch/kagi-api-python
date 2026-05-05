@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **query** | **str** | Search query to run. | 
 **workflow** | **str** | Type of results to return. | [optional] [default to 'search']
+**format** | **str** | Format to serialize the API response as. | [optional] [default to 'json']
 **lens_id** | **str** | Lens to apply to the search. Can be a built-in lens&#39;s identifier or a lens ID as shown on https://kagi.com/settings/lenses when a lens is set to be shareable. Can be just the ID portion of the URL (&#x60;https://kagi.com/lenses/ID&#x60;) or the full URL. | [optional] 
 **lens** | [**SearchRequestLens**](SearchRequestLens.md) |  | [optional] 
 **timeout** | **float** | Number of seconds to allow for collecting search results. Lower values will return results more quickly, but may be lower quality or inconsistent between calls. If omitted, will use the latest recommended value by Kagi. | [optional] 
