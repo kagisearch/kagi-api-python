@@ -129,17 +129,16 @@ configuration = openapi_client.Configuration(
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.EnrichmentApi(api_client)
-    q = 'steve jobs' # str | Query to enrich
-    type = web # str | Enrich a search query with results pulled from Kagi indexes. (default to web)
+    api_instance = openapi_client.ExtractApi(api_client)
+    extract_request = {"pages":[{"url":"https://example.com/article1"},{"url":"https://example.com/article2"}],"timeout":30,"format":"json"} # ExtractRequest | 
 
     try:
-        # Get enriched search results
-        api_response = api_instance.enrich_search(q, type)
-        print("The response of EnrichmentApi->enrich_search:\n")
+        # Extract page content as markdown from URLs
+        api_response = api_instance.extract_content(extract_request)
+        print("The response of ExtractApi->extract_content:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling EnrichmentApi->enrich_search: %s\n" % e)
+        print("Exception when calling ExtractApi->extract_content: %s\n" % e)
 
 ```
 
@@ -149,21 +148,12 @@ All URIs are relative to *https://kagi.com/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*EnrichmentApi* | [**enrich_search**](docs/EnrichmentApi.md#enrich_search) | **GET** /enrich/{type} | Get enriched search results
 *ExtractApi* | [**extract_content**](docs/ExtractApi.md#extract_content) | **POST** /extract | Extract page content as markdown from URLs
 *SearchApi* | [**search**](docs/SearchApi.md#search) | **POST** /search | Perform a web search
-*TranslateApi* | [**translate**](docs/TranslateApi.md#translate) | **POST** /api/translate | Text Translation
-*TranslateApi* | [**translate_alternatives**](docs/TranslateApi.md#translate_alternatives) | **POST** /alternative-translations | Alternative Translations
-*TranslateApi* | [**translate_detect**](docs/TranslateApi.md#translate_detect) | **POST** /api/detect | Language Detection
-*TranslateApi* | [**translate_dictionary**](docs/TranslateApi.md#translate_dictionary) | **POST** /api/dictionary | Dictionary
-*TranslateApi* | [**translate_list_languages**](docs/TranslateApi.md#translate_list_languages) | **GET** /api/list-languages | List Supported Languages
-*TranslateApi* | [**translate_romanize**](docs/TranslateApi.md#translate_romanize) | **GET** /api/romanize | Text Romanization
-*TranslateApi* | [**translate_word_insights**](docs/TranslateApi.md#translate_word_insights) | **POST** /api/word-insights | Word Insights
 
 
 ## Documentation For Models
 
- - [EnrichSearch200Response](docs/EnrichSearch200Response.md)
  - [ErrorDetail](docs/ErrorDetail.md)
  - [ErrorEnvelope](docs/ErrorEnvelope.md)
  - [ExtractRequest](docs/ExtractRequest.md)
@@ -173,9 +163,6 @@ Class | Method | HTTP request | Description
  - [PageOutput](docs/PageOutput.md)
  - [Search200Response](docs/Search200Response.md)
  - [Search200ResponseData](docs/Search200ResponseData.md)
- - [SearchObject](docs/SearchObject.md)
- - [SearchObjectImage](docs/SearchObjectImage.md)
- - [SearchObjectThumbnail](docs/SearchObjectThumbnail.md)
  - [SearchRequest](docs/SearchRequest.md)
  - [SearchRequestExtract](docs/SearchRequestExtract.md)
  - [SearchRequestFilters](docs/SearchRequestFilters.md)
@@ -185,40 +172,6 @@ Class | Method | HTTP request | Description
  - [SearchRequestPersonalizationsRegexesInner](docs/SearchRequestPersonalizationsRegexesInner.md)
  - [SearchResult](docs/SearchResult.md)
  - [SearchResultImage](docs/SearchResultImage.md)
- - [Translate200Response](docs/Translate200Response.md)
- - [Translate200ResponseOneOf](docs/Translate200ResponseOneOf.md)
- - [Translate200ResponseOneOf1](docs/Translate200ResponseOneOf1.md)
- - [Translate200ResponseOneOfDefinition](docs/Translate200ResponseOneOfDefinition.md)
- - [Translate200ResponseOneOfDefinitionDefinitionsInner](docs/Translate200ResponseOneOfDefinitionDefinitionsInner.md)
- - [Translate200ResponseOneOfDefinitionDefinitionsInnerMeaningsInner](docs/Translate200ResponseOneOfDefinitionDefinitionsInnerMeaningsInner.md)
- - [Translate200ResponseOneOfDetectedLanguage](docs/Translate200ResponseOneOfDetectedLanguage.md)
- - [Translate400Response](docs/Translate400Response.md)
- - [Translate500Response](docs/Translate500Response.md)
- - [TranslateAlternatives200Response](docs/TranslateAlternatives200Response.md)
- - [TranslateAlternatives200ResponseElementsInner](docs/TranslateAlternatives200ResponseElementsInner.md)
- - [TranslateAlternatives401Response](docs/TranslateAlternatives401Response.md)
- - [TranslateAlternatives402Response](docs/TranslateAlternatives402Response.md)
- - [TranslateAlternatives500Response](docs/TranslateAlternatives500Response.md)
- - [TranslateDetect200Response](docs/TranslateDetect200Response.md)
- - [TranslateDetect400Response](docs/TranslateDetect400Response.md)
- - [TranslateDetectRequest](docs/TranslateDetectRequest.md)
- - [TranslateDictionary200Response](docs/TranslateDictionary200Response.md)
- - [TranslateDictionary200ResponseDefinition](docs/TranslateDictionary200ResponseDefinition.md)
- - [TranslateDictionary200ResponseDefinitionPrimaryMeaning](docs/TranslateDictionary200ResponseDefinitionPrimaryMeaning.md)
- - [TranslateDictionary200ResponseDefinitionSecondaryMeaningsInner](docs/TranslateDictionary200ResponseDefinitionSecondaryMeaningsInner.md)
- - [TranslateDictionary200ResponseLanguage](docs/TranslateDictionary200ResponseLanguage.md)
- - [TranslateDictionary400Response](docs/TranslateDictionary400Response.md)
- - [TranslateDictionary500Response](docs/TranslateDictionary500Response.md)
- - [TranslateDictionaryRequest](docs/TranslateDictionaryRequest.md)
- - [TranslateListLanguages200ResponseInner](docs/TranslateListLanguages200ResponseInner.md)
- - [TranslateRequest](docs/TranslateRequest.md)
- - [TranslateRequestText](docs/TranslateRequestText.md)
- - [TranslateRomanize200Response](docs/TranslateRomanize200Response.md)
- - [TranslateWordInsights200Response](docs/TranslateWordInsights200Response.md)
- - [TranslateWordInsights200ResponseInsightsInner](docs/TranslateWordInsights200ResponseInsightsInner.md)
- - [TranslateWordInsights200ResponseInsightsInnerVariationsInner](docs/TranslateWordInsights200ResponseInsightsInnerVariationsInner.md)
- - [TranslateWordInsights400Response](docs/TranslateWordInsights400Response.md)
- - [TranslateWordInsights500Response](docs/TranslateWordInsights500Response.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -228,11 +181,6 @@ Class | Method | HTTP request | Description
 Authentication schemes defined for the API:
 <a id="kagi"></a>
 ### kagi
-
-- **Type**: Bearer authentication
-
-<a id="kagi-translate"></a>
-### kagi-translate
 
 - **Type**: Bearer authentication
 

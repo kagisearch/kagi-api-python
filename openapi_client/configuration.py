@@ -113,7 +113,6 @@ AuthSettings = TypedDict(
     "AuthSettings",
     {
         "kagi": BearerAuthSetting,
-        "kagi-translate": BearerAuthSetting,
     },
     total=False,
 )
@@ -519,13 +518,6 @@ class Configuration:
         auth: AuthSettings = {}
         if self.access_token is not None:
             auth['kagi'] = {
-                'type': 'bearer',
-                'in': 'header',
-                'key': 'Authorization',
-                'value': 'Bearer ' + self.access_token
-            }
-        if self.access_token is not None:
-            auth['kagi-translate'] = {
                 'type': 'bearer',
                 'in': 'header',
                 'key': 'Authorization',
