@@ -29,7 +29,6 @@ We offer the following libraries you can use to interact with the Kagi API. Thes
 
 There also exist third party libraries for interacting with the Kagi API.
 
-- [kagigo for Go](https://github.com/httpjamesm/kagigo) - FastGPT & Universal Summarizer
 - [kagi-api](https://crates.io/crates/kagi-api) for Rust
 - [kagi-api](https://alchemists.io/projects/kagi-api) for Ruby
 - [kagi-dotnet](https://github.com/patchoulish/kagi-dotnet) for C#/.NET
