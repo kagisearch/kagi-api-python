@@ -10,10 +10,6 @@ docs/ErrorEnvelope.md
 docs/ExtractApi.md
 docs/ExtractRequest.md
 docs/ExtractResponse.md
-docs/FastGPT200Response.md
-docs/FastGPT200ResponseData.md
-docs/FastGPTApi.md
-docs/FastGPTRequest.md
 docs/Meta.md
 docs/PageInput.md
 docs/PageOutput.md
@@ -32,9 +28,6 @@ docs/SearchRequestPersonalizationsDomainsInner.md
 docs/SearchRequestPersonalizationsRegexesInner.md
 docs/SearchResult.md
 docs/SearchResultImage.md
-docs/SummarizerApi.md
-docs/Summary.md
-docs/SummaryData.md
 docs/Translate200Response.md
 docs/Translate200ResponseOneOf.md
 docs/Translate200ResponseOneOf1.md
@@ -70,15 +63,12 @@ docs/TranslateWordInsights200ResponseInsightsInner.md
 docs/TranslateWordInsights200ResponseInsightsInnerVariationsInner.md
 docs/TranslateWordInsights400Response.md
 docs/TranslateWordInsights500Response.md
-docs/UploadText.md
 git_push.sh
 openapi_client/__init__.py
 openapi_client/api/__init__.py
 openapi_client/api/enrichment_api.py
 openapi_client/api/extract_api.py
-openapi_client/api/fast_gpt_api.py
 openapi_client/api/search_api.py
-openapi_client/api/summarizer_api.py
 openapi_client/api/translate_api.py
 openapi_client/api_client.py
 openapi_client/api_response.py
@@ -90,9 +80,6 @@ openapi_client/models/error_detail.py
 openapi_client/models/error_envelope.py
 openapi_client/models/extract_request.py
 openapi_client/models/extract_response.py
-openapi_client/models/fast_gpt200_response.py
-openapi_client/models/fast_gpt200_response_data.py
-openapi_client/models/fast_gpt_request.py
 openapi_client/models/meta.py
 openapi_client/models/page_input.py
 openapi_client/models/page_output.py
@@ -110,8 +97,6 @@ openapi_client/models/search_request_personalizations_domains_inner.py
 openapi_client/models/search_request_personalizations_regexes_inner.py
 openapi_client/models/search_result.py
 openapi_client/models/search_result_image.py
-openapi_client/models/summary.py
-openapi_client/models/summary_data.py
 openapi_client/models/translate200_response.py
 openapi_client/models/translate200_response_one_of.py
 openapi_client/models/translate200_response_one_of1.py
@@ -146,7 +131,6 @@ openapi_client/models/translate_word_insights200_response_insights_inner.py
 openapi_client/models/translate_word_insights200_response_insights_inner_variations_inner.py
 openapi_client/models/translate_word_insights400_response.py
 openapi_client/models/translate_word_insights500_response.py
-openapi_client/models/upload_text.py
 openapi_client/py.typed
 openapi_client/rest.py
 pyproject.toml
@@ -162,10 +146,6 @@ test/test_error_envelope.py
 test/test_extract_api.py
 test/test_extract_request.py
 test/test_extract_response.py
-test/test_fast_gpt200_response.py
-test/test_fast_gpt200_response_data.py
-test/test_fast_gpt_api.py
-test/test_fast_gpt_request.py
 test/test_meta.py
 test/test_page_input.py
 test/test_page_output.py
@@ -184,9 +164,6 @@ test/test_search_request_personalizations_domains_inner.py
 test/test_search_request_personalizations_regexes_inner.py
 test/test_search_result.py
 test/test_search_result_image.py
-test/test_summarizer_api.py
-test/test_summary.py
-test/test_summary_data.py
 test/test_translate200_response.py
 test/test_translate200_response_one_of.py
 test/test_translate200_response_one_of1.py
@@ -222,5 +199,4 @@ test/test_translate_word_insights200_response_insights_inner.py
 test/test_translate_word_insights200_response_insights_inner_variations_inner.py
 test/test_translate_word_insights400_response.py
 test/test_translate_word_insights500_response.py
-test/test_upload_text.py
 tox.ini

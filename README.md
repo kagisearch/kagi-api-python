@@ -12,8 +12,6 @@ We have the following APIs available.
 
 - Kagi Search API (invite only at the moment)
 - Web and News Enrichment API (public, exposes Kagi's own indexes Teclis and TinyGem)
-- Universal Summarizer API (public)
-- FastGPT API (public)
 
 ### Free
 
@@ -154,10 +152,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EnrichmentApi* | [**enrich_search**](docs/EnrichmentApi.md#enrich_search) | **GET** /enrich/{type} | Get enriched search results
 *ExtractApi* | [**extract_content**](docs/ExtractApi.md#extract_content) | **POST** /extract | Extract page content as markdown from URLs
-*FastGPTApi* | [**fast_gpt**](docs/FastGPTApi.md#fast_gpt) | **POST** /fastgpt | Answer a query.
 *SearchApi* | [**search**](docs/SearchApi.md#search) | **POST** /search | Perform a web search
-*SummarizerApi* | [**summarize_text**](docs/SummarizerApi.md#summarize_text) | **POST** /summarize | Upload text to summarize.
-*SummarizerApi* | [**summarize_url**](docs/SummarizerApi.md#summarize_url) | **GET** /summarize | Get a summary for a URL
 *TranslateApi* | [**translate**](docs/TranslateApi.md#translate) | **POST** /api/translate | Text Translation
 *TranslateApi* | [**translate_alternatives**](docs/TranslateApi.md#translate_alternatives) | **POST** /alternative-translations | Alternative Translations
 *TranslateApi* | [**translate_detect**](docs/TranslateApi.md#translate_detect) | **POST** /api/detect | Language Detection
@@ -174,9 +169,6 @@ Class | Method | HTTP request | Description
  - [ErrorEnvelope](docs/ErrorEnvelope.md)
  - [ExtractRequest](docs/ExtractRequest.md)
  - [ExtractResponse](docs/ExtractResponse.md)
- - [FastGPT200Response](docs/FastGPT200Response.md)
- - [FastGPT200ResponseData](docs/FastGPT200ResponseData.md)
- - [FastGPTRequest](docs/FastGPTRequest.md)
  - [Meta](docs/Meta.md)
  - [PageInput](docs/PageInput.md)
  - [PageOutput](docs/PageOutput.md)
@@ -194,8 +186,6 @@ Class | Method | HTTP request | Description
  - [SearchRequestPersonalizationsRegexesInner](docs/SearchRequestPersonalizationsRegexesInner.md)
  - [SearchResult](docs/SearchResult.md)
  - [SearchResultImage](docs/SearchResultImage.md)
- - [Summary](docs/Summary.md)
- - [SummaryData](docs/SummaryData.md)
  - [Translate200Response](docs/Translate200Response.md)
  - [Translate200ResponseOneOf](docs/Translate200ResponseOneOf.md)
  - [Translate200ResponseOneOf1](docs/Translate200ResponseOneOf1.md)
@@ -230,7 +220,6 @@ Class | Method | HTTP request | Description
  - [TranslateWordInsights200ResponseInsightsInnerVariationsInner](docs/TranslateWordInsights200ResponseInsightsInnerVariationsInner.md)
  - [TranslateWordInsights400Response](docs/TranslateWordInsights400Response.md)
  - [TranslateWordInsights500Response](docs/TranslateWordInsights500Response.md)
- - [UploadText](docs/UploadText.md)
 
 
 <a id="documentation-for-authorization"></a>
