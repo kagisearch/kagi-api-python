@@ -38,7 +38,7 @@ For bug reports, feature requests, or billing related issues please reach out to
 
 To help us answer your reports efficiently, please be prepared to provide as much info as you can:
 
-- For bugs, include request trace IDs from `meta.trace` or the `X-Kagi-Trace` response header.
+- For bugs, include request trace IDs from the `meta.trace` response field or the `X-Kagi-Trace` response header.
 - If issues are easily reproduced in our [playground](https://kagi.com/api/playground/search), send us a link to the playground - the URL will contain parameters to configure the request so that we can reproduce ourselves.
 - Include any code snippets or precise descriptions of the request you are making, and full samples of the response bodies from the API
 - Include mention of which wrapper you are using if any, or links to relevant application code we can review
