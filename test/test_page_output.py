@@ -39,7 +39,8 @@ class TestPageOutput(unittest.TestCase):
                 url = 'https://example.com/article',
                 markdown = '# Article Title
 
-This is the extracted content...'
+This is the extracted content...',
+                error = ''
             )
         else:
             return PageOutput(

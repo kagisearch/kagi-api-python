@@ -29,8 +29,9 @@ class PageOutput(BaseModel):
     Extracted content for a single page
     """ # noqa: E501
     url: StrictStr = Field(description="The URL of the extracted page")
-    markdown: Optional[StrictStr] = Field(default=None, description="Extracted markdown content of the page")
-    __properties: ClassVar[List[str]] = ["url", "markdown"]
+    markdown: Optional[StrictStr] = Field(default=None, description="Extracted markdown content of the page. Will be absent if extraction fails.")
+    error: Optional[StrictStr] = Field(default=None, description="If extraction fails, a string describing the reason why.")
+    __properties: ClassVar[List[str]] = ["url", "markdown", "error"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -89,7 +90,8 @@ class PageOutput(BaseModel):
 
         _obj = cls.model_validate({
             "url": obj.get("url"),
-            "markdown": obj.get("markdown")
+            "markdown": obj.get("markdown"),
+            "error": obj.get("error")
         })
         return _obj
 

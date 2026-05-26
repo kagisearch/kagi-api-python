@@ -7,7 +7,8 @@ Extracted content for a single page
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **str** | The URL of the extracted page | 
-**markdown** | **str** | Extracted markdown content of the page | [optional] 
+**markdown** | **str** | Extracted markdown content of the page. Will be absent if extraction fails. | [optional] 
+**error** | **str** | If extraction fails, a string describing the reason why. | [optional] 
 
 ## Example
 

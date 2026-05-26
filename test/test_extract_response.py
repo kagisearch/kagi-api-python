@@ -42,7 +42,8 @@ class TestExtractResponse(unittest.TestCase):
                         url = 'https://example.com/article', 
                         markdown = '# Article Title
 
-This is the extracted content...', )
+This is the extracted content...', 
+                        error = '', )
                     ],
                 errors = [
                     openapi_client.models.error_detail.errorDetail(
@@ -60,7 +61,8 @@ This is the extracted content...', )
                         url = 'https://example.com/article', 
                         markdown = '# Article Title
 
-This is the extracted content...', )
+This is the extracted content...', 
+                        error = '', )
                     ],
         )
         """
