@@ -1,4 +1,4 @@
-# openapi_client.SearchApi
+# kagi_client.SearchApi
 
 All URIs are relative to *https://kagi.com/api/v1*
 
@@ -17,15 +17,15 @@ Perform a web search
 * Bearer Authentication (kagi):
 
 ```python
-import openapi_client
-from openapi_client.models.search200_response import Search200Response
-from openapi_client.models.search_request import SearchRequest
-from openapi_client.rest import ApiException
+import kagi_client
+from kagi_client.models.search200_response import Search200Response
+from kagi_client.models.search_request import SearchRequest
+from kagi_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://kagi.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = kagi_client.Configuration(
     host = "https://kagi.com/api/v1"
 )
 
@@ -35,14 +35,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: kagi
-configuration = openapi_client.Configuration(
+configuration = kagi_client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with kagi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.SearchApi(api_client)
+    api_instance = kagi_client.SearchApi(api_client)
     search_request = {"query":"steve jobs","workflow":"search"} # SearchRequest | 
 
     try:

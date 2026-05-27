@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.error_envelope import ErrorEnvelope
+from kagi_client.models.error_envelope import ErrorEnvelope
 
 # TODO update the JSON string below
 json = "{}"

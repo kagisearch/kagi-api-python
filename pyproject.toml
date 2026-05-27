@@ -1,6 +1,6 @@
 [project]
-name = "openapi_client"
-version = "1.0.0"
+name = "kagi_client"
+version = "1.0.0rc3"
 description = "Kagi API"
 authors = [
   {name = "API Support",email = "developers@kagi.com"},
@@ -41,7 +41,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "openapi_client",
+  "kagi_client",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -79,7 +79,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "openapi_client.configuration",
+  "kagi_client.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true

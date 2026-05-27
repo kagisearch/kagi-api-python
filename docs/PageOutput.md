@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.page_output import PageOutput
+from kagi_client.models.page_output import PageOutput
 
 # TODO update the JSON string below
 json = "{}"

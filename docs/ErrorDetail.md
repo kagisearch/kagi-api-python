@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.error_detail import ErrorDetail
+from kagi_client.models.error_detail import ErrorDetail
 
 # TODO update the JSON string below
 json = "{}"

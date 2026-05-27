@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.search200_response_data import Search200ResponseData
+from kagi_client.models.search200_response_data import Search200ResponseData
 
 # TODO update the JSON string below
 json = "{}"

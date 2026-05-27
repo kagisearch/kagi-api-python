@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.search_request_personalizations import SearchRequestPersonalizations
+from kagi_client.models.search_request_personalizations import SearchRequestPersonalizations
 
 # TODO update the JSON string below
 json = "{}"

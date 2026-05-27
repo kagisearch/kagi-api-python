@@ -1,4 +1,4 @@
-# openapi_client.ExtractApi
+# kagi_client.ExtractApi
 
 All URIs are relative to *https://kagi.com/api/v1*
 
@@ -21,15 +21,15 @@ and the extracted content is returned in the response.
 * Bearer Authentication (kagi):
 
 ```python
-import openapi_client
-from openapi_client.models.extract_request import ExtractRequest
-from openapi_client.models.extract_response import ExtractResponse
-from openapi_client.rest import ApiException
+import kagi_client
+from kagi_client.models.extract_request import ExtractRequest
+from kagi_client.models.extract_response import ExtractResponse
+from kagi_client.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://kagi.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = kagi_client.Configuration(
     host = "https://kagi.com/api/v1"
 )
 
@@ -39,14 +39,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: kagi
-configuration = openapi_client.Configuration(
+configuration = kagi_client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with kagi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.ExtractApi(api_client)
+    api_instance = kagi_client.ExtractApi(api_client)
     extract_request = {"pages":[{"url":"https://example.com/article1"},{"url":"https://example.com/article2"}],"timeout":1.337,"format":"json"} # ExtractRequest | 
 
     try:

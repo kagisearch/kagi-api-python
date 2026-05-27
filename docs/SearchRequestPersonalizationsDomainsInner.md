@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.search_request_personalizations_domains_inner import SearchRequestPersonalizationsDomainsInner
+from kagi_client.models.search_request_personalizations_domains_inner import SearchRequestPersonalizationsDomainsInner
 
 # TODO update the JSON string below
 json = "{}"

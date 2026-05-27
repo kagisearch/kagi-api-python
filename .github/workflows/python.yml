@@ -3,7 +3,7 @@
 #
 # ref: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: openapi_client Python package
+name: kagi_client Python package
 
 on: [push, pull_request]
 
@@ -31,4 +31,4 @@ jobs:
           pip install -r test-requirements.txt
       - name: Test with pytest
         run: |
-          pytest --cov=openapi_client
+          pytest --cov=kagi_client
